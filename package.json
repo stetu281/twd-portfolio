@@ -1,0 +1,17 @@
+{
+  "name": "twd-starter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@wordpress/prettier-config": "^4.5.0",
+    "@wordpress/scripts": "^28.5.0",
+    "remove-files-webpack-plugin": "^1.5.0"
+  }
+}
