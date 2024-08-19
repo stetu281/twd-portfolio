@@ -1,17 +1,21 @@
 {
-  "name": "twd-starter",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "@wordpress/prettier-config": "^4.5.0",
-    "@wordpress/scripts": "^28.5.0",
-    "remove-files-webpack-plugin": "^1.5.0"
-  }
+	"name": "twd-starter",
+	"version": "1.0.0",
+	"main": "index.js",
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"scripts": {
+		"build": "wp-scripts build --output-path=assets",
+		"start": "wp-scripts start --output-path=assets"
+	},
+	"devDependencies": {
+		"@wordpress/prettier-config": "^4.5.0",
+		"@wordpress/scripts": "^28.5.0",
+		"copy-webpack-plugin": "^12.0.2",
+		"glob": "^11.0.0",
+		"path": "^0.12.7",
+		"webpack-remove-empty-scripts": "^1.0.4"
+	}
 }
