@@ -4,7 +4,6 @@ const RemoveEmptyScriptsPlugin = require( 'webpack-remove-empty-scripts' );
 const CopyPlugin = require( 'copy-webpack-plugin' );
 const path = require( 'path' );
 const { globSync } = require( 'glob' );
-const styleOutputFolder = 'css';
 
 /**Process individual block stylesheets */
 const blockStylesheets = () => {
