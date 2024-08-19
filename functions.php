@@ -56,3 +56,12 @@ function starter_frontend_scripts() {
 
   wp_enqueue_script( 'starter-frontend-scripts', get_theme_file_uri() . '/assets/js/custom.js', $asset['dependencies'], $asset['version'], true);
 }
+
+/** * Completely Remove jQuery From WordPress */
+function my_init() {
+  if (!is_admin()) {
+      wp_deregister_script('jquery');
+      wp_register_script('jquery', false);
+  }
+}
+add_action('init', 'my_init');
