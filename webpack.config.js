@@ -1,26 +1,23 @@
-const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
+const defaultConfig = require('@wordpress/scripts/config/webpack.config');
 
-const RemoveEmptyScriptsPlugin = require( 'webpack-remove-empty-scripts' );
-const CopyPlugin = require( 'copy-webpack-plugin' );
-const path = require( 'path' );
-const { globSync } = require( 'glob' );
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
+const CopyPlugin = require('copy-webpack-plugin');
+const path = require('path');
+const { globSync } = require('glob');
 
 /**Process individual block stylesheets */
 const blockStylesheets = () => {
-	return globSync( `./src/scss/blocks/*.scss` ).reduce(
-		( files, filepath ) => {
-			const name = path.parse( filepath ).name;
+	return globSync(`./src/scss/blocks/*.scss`).reduce((files, filepath) => {
+		const name = path.parse(filepath).name;
 
-			files[ `css/blocks/${ name }` ] = path.resolve(
-				process.cwd(),
-				`src/scss/blocks/`,
-				`${ name }.scss`
-			);
+		files[`css/blocks/${name}`] = path.resolve(
+			process.cwd(),
+			`src/scss/blocks/`,
+			`${name}.scss`
+		);
 
-			return files;
-		},
-		{}
-	);
+		return files;
+	}, {});
 };
 
 module.exports = {
@@ -28,27 +25,32 @@ module.exports = {
 	...{
 		entry: {
 			...blockStylesheets(),
-			'js/custom': path.resolve( process.cwd(), 'src/js', 'custom.js' ),
+			'js/custom': path.resolve(process.cwd(), 'src/js', 'custom.js'),
 			'css/screen': path.resolve(
 				process.cwd(),
 				'src/scss',
 				'screen.scss'
 			),
+			'css/editor-styles': path.resolve(
+				process.cwd(),
+				'src/scss/',
+				'editor.scss'
+			),
 		},
 	},
 	plugins: [
 		...defaultConfig.plugins,
-		new RemoveEmptyScriptsPlugin( {
+		new RemoveEmptyScriptsPlugin({
 			stage: RemoveEmptyScriptsPlugin.STAGE_AFTER_PROCESS_PLUGINS,
-		} ),
+		}),
 
-		new CopyPlugin( {
+		new CopyPlugin({
 			patterns: [
 				{
 					from: './src/fonts',
 					to: './fonts',
 				},
 			],
-		} ),
+		}),
 	],
 };
