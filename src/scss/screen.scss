@@ -1,3 +1,9 @@
+@use "./components/header" as *;
+
+* {
+	box-sizing: border-box;
+}
+
 body {
-	background-color: antiquewhite;
+	background-color: var(--wp--preset--color--black);
 }

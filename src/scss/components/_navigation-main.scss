@@ -1,0 +1,102 @@
+.navigation {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	background-color: transparent;
+	transform: translateY(120%);
+	transition:
+		transform 0.9s ease,
+		backdrop-filter 1.2s ease,
+		background-color 0.7s ease;
+
+	ul {
+		padding: 3rem;
+		width: 90%;
+		height: 80%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		border-radius: 2rem;
+		background-color: rgba(black, 0.7);
+		transform: translate(5%, 130%);
+		transition: transform 0.5s ease;
+		transition-delay: 0.2s;
+
+		li {
+			padding: 1.5rem 0;
+			width: 100%;
+			background-color: transparent !important;
+			transform: translateY(6rem);
+			transition: transform 0.6s ease-in-out;
+
+			a {
+				transition: transform 0.2s ease;
+
+				span {
+					font-size: var(--wp--preset--font-size--large);
+					font-weight: 800;
+					color: rgba(white, 0.2);
+					transition: color 0.3s ease;
+				}
+			}
+
+			&:nth-of-type(1) {
+				transition-delay: 0.4s;
+			}
+
+			&:nth-of-type(2) {
+				transition-delay: 0.5s;
+			}
+
+			&:nth-of-type(3) {
+				transition-delay: 0.6s;
+			}
+
+			&:nth-of-type(4) {
+				transition-delay: 0.7s;
+			}
+
+			&:not(:first-of-type) {
+				border-top: 4px solid rgba(white, 25%);
+			}
+
+			&.current-menu-item {
+				a span {
+					color: var(--wp--preset--color--white);
+				}
+			}
+
+			&:hover {
+				cursor: pointer;
+
+				a {
+					transform: translateX(0.5rem);
+
+					span {
+						color: var(--wp--preset--color--white);
+					}
+				}
+			}
+		}
+	}
+
+	&--open {
+		transform: translateY(0);
+		background-color: rgba(56, 56, 56, 0.7);
+		backdrop-filter: blur(6px);
+
+		ul {
+			transform: translate(5%, 15%);
+
+			li {
+				transform: translateY(0);
+			}
+		}
+	}
+}
