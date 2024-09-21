@@ -1,3 +1,6 @@
+@use "../basics/variables" as *;
+@use "../basics/mixins" as *;
+
 .navigation {
 	position: fixed;
 	display: flex;
@@ -96,6 +99,45 @@
 
 			li {
 				transform: translateY(0);
+			}
+		}
+	}
+
+	@include breakpoint($w_sm) {
+		position: unset;
+		width: unset;
+		height: unset;
+		z-index: unset;
+		transform: unset;
+
+		ul {
+			padding: unset;
+			width: unset;
+			height: unset;
+			flex-direction: row;
+			gap: 1rem;
+			transform: unset;
+
+			li {
+				transform: unset;
+
+				&:not(:first-of-type) {
+					border-top: unset;
+				}
+
+				a {
+					span {
+						font-size: var(--wp--preset--font-size--medium);
+						font-weight: 600;
+						color: rgba(white, 0.3);
+					}
+				}
+
+				&:hover {
+					a {
+						transform: translate(2px, -2px);
+					}
+				}
 			}
 		}
 	}
