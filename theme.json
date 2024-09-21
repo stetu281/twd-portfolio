@@ -7,8 +7,15 @@
 			"contentSize": "840px",
 			"wideSize": "2000px"
 		},
+		"custom": {
+			"line-height": {
+				"paragraph": 1.5,
+				"heading": 1.2
+			}
+		},
 		"spacing": {
-			"units": ["%", "px", "em", "rem", "vh", "vw"]
+			"units": ["%", "px", "em", "rem", "vh", "vw"],
+			"blockGap": false
 		},
 		"color": {
 			"defaultPalette": false,
@@ -29,6 +36,11 @@
 					"slug": "blue",
 					"color": "#6D2ED9",
 					"name": "Blau-Violett"
+				},
+				{
+					"slug": "font-gray",
+					"color": "#9b9b9b",
+					"name": "Paragraph Grau"
 				}
 			]
 		},
@@ -101,12 +113,25 @@
 		"color": {
 			"text": "var(--wp--preset--color--white)"
 		},
+		"blocks": {
+			"core/paragraph": {
+				"color": {
+					"text": "var(--wp--preset--color--font-gray)"
+				}
+			}
+		},
 		"spacing": {
 			"padding": {
 				"top": "0px",
 				"right": "2rem",
 				"bottom": "0px",
 				"left": "2rem"
+			},
+			"margin": {
+				"top": "0px",
+				"right": "0px",
+				"bottom": "0px",
+				"left": "0px"
 			}
 		},
 		"typography": {

@@ -1,9 +1,25 @@
 @use "./components/header" as *;
+@use "./components/footer" as *;
 
 * {
 	box-sizing: border-box;
+	margin-block-start: 0 !important;
+	margin-block-end: 0 !important;
 }
 
 body {
 	background-color: var(--wp--preset--color--black);
+}
+
+p {
+	line-height: var(--wp--custom--line-height--paragraph);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: var(--wp--custom--line-height--heading);
 }
