@@ -10,6 +10,28 @@
 		"spacing": {
 			"units": ["%", "px", "em", "rem", "vh", "vw"]
 		},
+		"color": {
+			"defaultPalette": false,
+			"defaultDuotone": false,
+			"defaultGradients": false,
+			"palette": [
+				{
+					"slug": "white",
+					"color": "#ffffff",
+					"name": "Weiss"
+				},
+				{
+					"slug": "black",
+					"color": "#000000",
+					"name": "Schwarz"
+				},
+				{
+					"slug": "blue",
+					"color": "#6D2ED9",
+					"name": "Blau-Violett"
+				}
+			]
+		},
 		"typography": {
 			"fontFamilies": [
 				{
@@ -76,6 +98,9 @@
 		"useRootPaddingAwareAlignments": true
 	},
 	"styles": {
+		"color": {
+			"text": "var(--wp--preset--color--white)"
+		},
 		"spacing": {
 			"padding": {
 				"top": "0px",
@@ -85,10 +110,10 @@
 			}
 		},
 		"typography": {
-			"fontFamily": "var(--wp--preset--font-family--inter)",
+			"fontFamily": "var(--wp--preset--font-family--poppins)",
 			"fontSize": "var(--wp--preset--font-size--regular)",
 			"fontWeight": "400",
-			"lineHeight": "1.5"
+			"lineHeight": "1"
 		}
 	},
 	"templateParts": [
