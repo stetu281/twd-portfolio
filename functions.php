@@ -1,6 +1,16 @@
 <?php
 
 /**
+ * Add Editor Stylesheet
+ */
+function portfolio_editor_stylesheet() {
+  add_theme_support('editor-styles');
+  add_editor_style('assets/css/editor-styles.css');
+};
+add_action('after_setup_theme', 'portfolio_editor_stylesheet');
+
+
+/**
  * Enqueue Block Stylesheets
  */
 add_action('init', 'starter_enqueue_block_styles');
