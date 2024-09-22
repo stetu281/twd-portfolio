@@ -1,5 +1,18 @@
 body {
 	.wp-block-button {
-		background-color: hotpink;
+		&__link {
+			font-size: var(--wp--preset--font-size--paragraph-base);
+			background-color: transparent;
+			border: 2px solid var(--wp--preset--color--white);
+			font-weight: 600;
+			transition:
+				color 0.3s ease,
+				background-color 0.3s ease;
+
+			&:hover {
+				background-color: var(--wp--preset--color--white);
+				color: var(--wp--preset--color--black);
+			}
+		}
 	}
 }

@@ -1,6 +1,10 @@
 @use "./components/header" as *;
 @use "./components/footer" as *;
 @use "./components/hero" as *;
+@use "./components/fp-works" as *;
+
+@use "./basics/variables" as *;
+@use "./basics/mixins" as *;
 
 * {
 	box-sizing: border-box;
@@ -12,6 +16,7 @@ body {
 
 p {
 	line-height: var(--wp--custom--line-height--paragraph);
+	font-size: var(--wp--preset--font-size--paragraph-base);
 }
 
 h1,
@@ -21,4 +26,18 @@ h4,
 h5,
 h6 {
 	line-height: var(--wp--custom--line-height--heading);
+}
+
+h1 {
+	strong {
+		background: linear-gradient(90deg, #7d87e2, #f7beda);
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+}
+
+@include breakpoint($w_md) {
+	p {
+		font-size: var(--wp--preset--font-size--paragraph-large) !important;
+	}
 }

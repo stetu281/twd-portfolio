@@ -2,14 +2,6 @@
 @use "../basics/mixins" as *;
 
 .hero {
-	h1 {
-		strong {
-			background: linear-gradient(90deg, #7d87e2, #f7beda);
-			background-clip: text;
-			-webkit-text-fill-color: transparent;
-		}
-	}
-
 	&__cover {
 		img {
 			object-fit: contain !important;
