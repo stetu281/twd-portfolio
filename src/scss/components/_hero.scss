@@ -1,0 +1,122 @@
+@use "../basics/variables" as *;
+@use "../basics/mixins" as *;
+
+.hero {
+	h1 {
+		strong {
+			background: linear-gradient(90deg, #7d87e2, #f7beda);
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+	}
+
+	&__cover {
+		img {
+			object-fit: contain !important;
+			transform: translateY(9rem);
+		}
+	}
+
+	&__slider {
+		&--container {
+			width: 350%;
+		}
+
+		&--title {
+			z-index: 2;
+
+			@supports (animation-timeline: view()) {
+				@keyframes fadeOut {
+					to {
+						opacity: 0;
+					}
+				}
+
+				animation: fadeOut 1ms linear both;
+				animation-timeline: view();
+				animation-range: contain 30% exit 20%;
+			}
+		}
+
+		&--imgContainer {
+			transform: translateX(-15%);
+
+			figure {
+				animation: loadImg 1s ease 0s forwards;
+
+				@keyframes loadImg {
+					from {
+						transform: translateX(10rem);
+						opacity: 0;
+					}
+					to {
+						transform: translateX(0);
+						opacity: 1;
+					}
+				}
+
+				img {
+					transform: translateY(0);
+					width: 100%;
+					height: 100%;
+					object-fit: cover !important;
+				}
+
+				&:nth-of-type(1) {
+					min-height: 20rem;
+					max-height: 60rem;
+					aspect-ratio: 8 / 9;
+				}
+
+				&:nth-of-type(2) {
+					min-height: 20rem;
+					max-height: 60rem;
+					aspect-ratio: 16 / 10;
+					animation-delay: 0.2s;
+				}
+
+				&:nth-of-type(3) {
+					min-height: 20rem;
+					max-height: 60rem;
+					aspect-ratio: 8 / 9;
+					animation-delay: 0.4s;
+				}
+			}
+
+			@supports (animation-timeline: view()) {
+				@keyframes slide {
+					to {
+						transform: translateX(-90%);
+					}
+				}
+
+				animation: slide 1ms linear both;
+				animation-timeline: view();
+				animation-range: contain 20% exit 100%;
+				view-timeline-inset: 25%;
+			}
+		}
+	}
+
+	@include breakpoint($w_sm) {
+		&__slider {
+			&--imgContainer {
+				transform: translateX(-5%);
+			}
+		}
+	}
+
+	@include breakpoint($w_md) {
+		&__cover {
+			img {
+				object-fit: cover !important;
+			}
+		}
+
+		&__slider {
+			&--container {
+				margin-top: var(--wp--preset--spacing--90) !important;
+			}
+		}
+	}
+}
