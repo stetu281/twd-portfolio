@@ -1,0 +1,63 @@
+@use "../basics/variables" as *;
+@use "../basics/mixins" as *;
+
+.about {
+	@include breakpoint($w_sm) {
+		&__imgGrid {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: 1.5fr 1fr;
+			min-height: 40rem;
+
+			figure {
+				width: 100%;
+				height: 100%;
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+
+				&:nth-of-type(1) {
+					grid-column: 2 / 3;
+					grid-row: 1 / 3;
+				}
+			}
+		}
+	}
+
+	@include breakpoint($w_md) {
+		&__grid {
+			grid-template-columns: 1.4fr 1fr;
+			align-items: center;
+			gap: 2rem;
+		}
+
+		&__imgGrid {
+			figure {
+				&:nth-of-type(1) {
+					grid-column: 1 / 3;
+					grid-row: 1 / 2;
+				}
+			}
+		}
+	}
+
+	@include breakpoint($w_lg) {
+		&__grid {
+			gap: 4rem;
+		}
+
+		&__imgGrid {
+			grid-template-rows: 1.5fr 1fr;
+			min-height: 50rem;
+
+			figure {
+				&:nth-of-type(1) {
+					grid-column: 2 / 3;
+					grid-row: 1 / 3;
+				}
+			}
+		}
+	}
+}
