@@ -10,6 +10,7 @@
 	justify-content: space-evenly;
 	background-color: transparent;
 	border: none;
+	z-index: 11;
 
 	span {
 		width: 100%;
@@ -36,7 +37,7 @@
 	&--open {
 		position: fixed;
 		top: 1.4rem;
-		right: 2rem;
+		right: 1.5rem;
 
 		span {
 			&:nth-of-type(1) {
