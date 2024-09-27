@@ -1,0 +1,12 @@
+%tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.375rem;
+
+	li {
+		list-style-type: none;
+		padding: 0.375rem 0.75rem;
+		border-radius: 30px;
+		background-color: var(--wp--preset--color--black-light);
+	}
+}

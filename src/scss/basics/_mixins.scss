@@ -3,3 +3,26 @@
 		@content;
 	}
 }
+
+@mixin slideAnimation(
+	$name,
+	$tr-from,
+	$tr-to,
+	$op-from,
+	$op-to,
+	$fi-from,
+	$fi-to
+) {
+	@keyframes #{$name} {
+		from {
+			transform: translateX($tr-from);
+			opacity: $op-from;
+			filter: blur($fi-from);
+		}
+		to {
+			transform: translateX($tr-to);
+			opacity: $op-to;
+			filter: blur($fi-to);
+		}
+	}
+}

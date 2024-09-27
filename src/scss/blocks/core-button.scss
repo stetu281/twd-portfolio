@@ -14,5 +14,21 @@ body {
 				color: var(--wp--preset--color--black);
 			}
 		}
+
+		&:has(svg) a {
+			display: flex;
+			align-items: center;
+			gap: 0.75rem;
+
+			svg path {
+				transition: fill 0.3s ease;
+			}
+
+			&:hover {
+				svg path {
+					fill: var(--wp--preset--color--black);
+				}
+			}
+		}
 	}
 }
