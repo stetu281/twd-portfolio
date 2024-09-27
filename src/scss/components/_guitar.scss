@@ -1,0 +1,253 @@
+@use "../basics/variables" as *;
+@use "../basics/mixins" as *;
+
+@include slideAnimation("titleSlide", 5rem, 0, 0, 0.7, 20px, 0);
+@include slideAnimation("textSlide", 5rem, 0, 0, 1, 20px, 0);
+@include slideAnimation("imgSlide", 5rem, 0, 0, 1, 5px, 0);
+@include slideAnimation("titleFade", 0, -5rem, 1, 0, 0, 20px);
+
+@keyframes contentBackground {
+	0% {
+		background-color: transparent;
+	}
+
+	80% {
+		background-color: rgba(white, 0);
+	}
+
+	90% {
+		backdrop-filter: blur(0);
+		background-color: transparent;
+	}
+
+	100% {
+		backdrop-filter: blur(5px);
+		background-color: rgba(white, 0.75);
+	}
+}
+
+.guitar {
+	position: relative;
+	height: calc(100lvh - 15rem);
+	min-height: 33rem;
+	max-height: 45rem;
+	overflow: hidden;
+	box-shadow: none;
+	transition: box-shadow 0.4s ease;
+
+	h2 {
+		position: absolute;
+		bottom: 5%;
+		left: 5%;
+		font-size: 19vw;
+		font-weight: 900;
+		line-height: 110%;
+		color: rgba(white, 0.3);
+	}
+
+	&__content {
+		padding: 3rem 1rem;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		background-color: transparent;
+
+		h3 {
+			position: absolute;
+			top: 0;
+			left: 0;
+			font-size: 21vw;
+			color: #dddddd;
+			line-height: 90%;
+			z-index: 2;
+			opacity: 0;
+		}
+
+		h4 {
+			font-size: 2rem;
+			font-weight: 600;
+			z-index: 3;
+			position: relative;
+			opacity: 0;
+		}
+
+		p {
+			position: relative;
+			z-index: 3;
+			opacity: 0;
+		}
+	}
+
+	&__grid {
+		width: 100%;
+		grid-template-rows: repeat(2, auto);
+		z-index: 3;
+		gap: 0.5rem;
+
+		figure {
+			opacity: 0;
+
+			&:nth-of-type(1) {
+				grid-column: 1 / 3;
+				grid-row: 1 / 2;
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				max-height: 6rem;
+			}
+		}
+	}
+
+	&__video {
+		width: 100%;
+		height: 100%;
+
+		video {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 1.5rem;
+		}
+	}
+
+	&.in {
+		box-shadow: rgba(174, 206, 240, 0.4) 0 10px 30px 4px;
+	}
+
+	&.animate {
+		h2 {
+			animation: titleFade 3s ease 6s forwards;
+		}
+
+		.guitar__content {
+			animation: contentBackground 8s ease forwards;
+
+			h3 {
+				animation: titleSlide 1s ease-in-out 7s forwards;
+			}
+
+			h4 {
+				animation: textSlide 1.5s ease 7.3s forwards;
+			}
+
+			p {
+				animation: textSlide 1.5s ease 7.5s forwards;
+			}
+		}
+
+		.guitar__grid {
+			figure {
+				animation: imgSlide 1s ease 6.3s forwards;
+
+				&:nth-of-type(2) {
+					animation-delay: 6.6s;
+				}
+
+				&:nth-of-type(3) {
+					animation-delay: 6.9s;
+				}
+			}
+		}
+	}
+
+	&.paused {
+		h2 {
+			animation-play-state: paused;
+		}
+
+		.guitar {
+			&__content {
+				animation-play-state: paused;
+
+				h3,
+				h4,
+				p {
+					animation-play-state: paused;
+				}
+			}
+
+			&__grid {
+				figure {
+					animation-play-state: paused;
+				}
+			}
+		}
+	}
+
+	@include breakpoint(530px) {
+		&__grid {
+			figure {
+				img {
+					max-height: 25vw;
+				}
+			}
+		}
+	}
+
+	@include breakpoint($w_sm) {
+		&__content {
+			padding: 3rem 2rem;
+			width: 60%;
+
+			backdrop-filter: unset;
+
+			h3 {
+				font-size: 12.5vw;
+			}
+		}
+
+		&__grid {
+			margin-top: 4rem !important;
+			width: 140%;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: unset;
+
+			figure {
+				&:nth-of-type(1) {
+					grid-row: unset;
+					grid-column: unset;
+				}
+
+				img {
+					max-height: unset;
+					aspect-ratio: 16 / 11;
+				}
+			}
+		}
+	}
+
+	@include breakpoint($w_md) {
+		&__content {
+			h4 {
+				font-size: 3rem;
+			}
+
+			p {
+				max-width: 31rem;
+				font-size: var(--wp--preset--font-size--paragraph-large);
+			}
+		}
+	}
+
+	@include breakpoint($w_xl) {
+		&__content {
+			padding: 3rem;
+
+			p {
+				font-size: 1.425rem !important;
+				max-width: 35rem;
+			}
+		}
+	}
+
+	@include breakpoint(1700px) {
+		max-height: 55rem;
+
+		h2 {
+			font-size: 21rem;
+		}
+	}
+}

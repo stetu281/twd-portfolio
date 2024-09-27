@@ -1,5 +1,6 @@
 @use "../basics/variables" as *;
 @use "../basics/mixins" as *;
+@use "../basics/placeholders" as *;
 
 .fp-works {
 	&__work {
@@ -74,16 +75,7 @@
 	}
 
 	&__tags {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.375rem;
-
-		li {
-			list-style-type: none;
-			padding: 0.375rem 0.75rem;
-			border-radius: 30px;
-			background-color: var(--wp--preset--color--black-light);
-		}
+		@extend %tags;
 	}
 
 	@include breakpoint($w_md) {

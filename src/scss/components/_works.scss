@@ -1,5 +1,7 @@
 @use "../basics/variables" as *;
 @use "../basics/mixins" as *;
+@use "./works-websites" as *;
+@use "./works-design" as *;
 
 .works {
 	margin-top: -30%;

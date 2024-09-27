@@ -1,0 +1,47 @@
+@use "../basics/variables" as *;
+@use "../basics/mixins" as *;
+@use "../basics/placeholders" as *;
+
+.websites {
+	&__tags {
+		@extend %tags;
+	}
+
+	&__textContainer {
+		max-width: 43rem;
+	}
+
+	.wp-block-button a {
+		padding: 0.75rem 1.5rem;
+	}
+
+	@include breakpoint($w_sm) {
+		margin-top: -20%;
+
+		ul {
+			gap: 1rem;
+
+			li {
+				a {
+					padding: 0.75rem 1.5rem;
+				}
+			}
+		}
+	}
+
+	@include breakpoint($w_md) {
+		&__grid {
+			grid-template-columns: repeat(2, 1fr);
+			column-gap: var(--wp--preset--spacing--60);
+		}
+
+		&__half {
+			grid-column: span 1;
+		}
+
+		&__full,
+		h1 {
+			grid-column: span 2;
+		}
+	}
+}
