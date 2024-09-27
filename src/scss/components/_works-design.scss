@@ -3,6 +3,14 @@
 @use "./guitar" as *;
 
 .design {
+	&__brewery {
+		width: 100%;
+
+		img {
+			width: 100%;
+		}
+	}
+
 	@include breakpoint($w_md) {
 		&__grid {
 			grid-template-columns: 2fr 1.4fr;
