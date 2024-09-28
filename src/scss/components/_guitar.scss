@@ -27,6 +27,7 @@
 }
 
 .guitar {
+	margin: var(--wp--preset--spacing--60) 0 !important;
 	position: relative;
 	height: calc(100lvh - 15rem);
 	min-height: 33rem;

@@ -1,0 +1,50 @@
+@use "../basics/variables" as *;
+@use "../basics/mixins" as *;
+
+.misc {
+	&__textContainer {
+		p {
+			max-width: 58rem;
+		}
+	}
+
+	&__embed {
+		&--trivia,
+		&--clicker {
+			width: 100%;
+			max-width: unset !important;
+			border-radius: 1.5rem;
+		}
+
+		&--trivia {
+			height: 800px;
+		}
+
+		&--clicker {
+			height: 1790px;
+			background-color: var(--wp--preset--color--white);
+		}
+
+		&#clickField {
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
+
+	@include breakpoint(865px) {
+		&__embed {
+			&--clicker {
+				height: 1380px;
+			}
+		}
+	}
+
+	@include breakpoint(1297px) {
+		&__embed {
+			&--clicker {
+				height: 800px;
+			}
+		}
+	}
+}
