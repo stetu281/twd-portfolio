@@ -1,0 +1,138 @@
+@use "../basics/variables" as *;
+@use "../basics/mixins" as *;
+
+.contact {
+	&__text {
+		a {
+			color: var(--wp--preset--color--blue);
+			text-decoration: none;
+			transition: color 0.3s ease;
+
+			&:hover {
+				color: var(--wp--preset--color--white);
+			}
+		}
+	}
+
+	&__social {
+		li {
+			position: relative;
+
+			&::before,
+			&::after {
+				position: absolute;
+				background-color: var(--wp--preset--color--blue);
+				transition: opacity 0.3s ease;
+				opacity: 0;
+			}
+
+			&:before {
+				content: "";
+				clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+				width: 1.5rem;
+				height: 1rem;
+				top: 100%;
+				left: 25%;
+			}
+
+			&::after {
+				font-size: var(--wp--preset--font-size--base);
+				padding: 0.125rem 0.5rem;
+				top: 120%;
+				left: 0;
+				border-radius: 0.5rem;
+			}
+
+			&.wp-social-link-github {
+				&::after {
+					content: "Github";
+				}
+			}
+
+			&.wp-social-link-linkedin {
+				&::after {
+					content: "LinkedIn";
+				}
+			}
+
+			&.wp-social-link-spotify {
+				&::after {
+					content: "Spotify";
+				}
+			}
+
+			&:hover {
+				&::after,
+				&::before {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	&__form {
+		margin-top: 2rem !important;
+
+		form {
+			padding: 2rem 1rem;
+			display: flex;
+			flex-direction: column;
+			gap: 1.5rem;
+			background-color: var(--wp--preset--color--black-light);
+			border-radius: 1.5rem;
+
+			p {
+				margin: 0;
+			}
+
+			label {
+				padding-left: 1rem;
+				font-weight: 600;
+			}
+
+			input,
+			textarea {
+				margin-top: 0.5rem;
+				width: 100%;
+				color: var(--wp--preset--color--white);
+				font-size: var(--wp--preset--font-size--paragraph-base);
+				outline: none;
+				border: 2px solid var(--wp--preset--color--white);
+				border-radius: 1rem;
+				background-color: transparent;
+
+				&:active,
+				&:focus {
+					border-color: var(--wp--preset--color--blue);
+				}
+			}
+
+			input {
+				padding: 0.75rem 1rem;
+
+				&[type="submit"] {
+					padding: 0.75rem 1.5rem;
+					width: fit-content;
+					font-weight: 600;
+					transition: all 0.3s ease;
+
+					&:hover {
+						cursor: pointer;
+						background-color: var(--wp--preset--color--white);
+						color: var(--wp--preset--color--black-light);
+					}
+
+					&:active,
+					&:focus {
+						border-color: var(--wp--preset--color--blue);
+					}
+				}
+			}
+
+			textarea {
+				padding: 1.5rem;
+				resize: none;
+			}
+		}
+	}
+}
