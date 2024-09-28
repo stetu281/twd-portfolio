@@ -249,9 +249,9 @@
 		"spacing": {
 			"padding": {
 				"top": "0px",
-				"right": "2.5rem",
+				"right": "1.75rem",
 				"bottom": "0px",
-				"left": "2.5rem"
+				"left": "1.75rem"
 			}
 		},
 		"typography": {
