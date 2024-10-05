@@ -53,6 +53,11 @@
 					"slug": "font-gray",
 					"color": "#9b9b9b",
 					"name": "Paragraph Grau"
+				},
+				{
+					"slug": "yellow-light",
+					"color": "#ffe19f",
+					"name": "Gelb-Hell"
 				}
 			],
 			"gradients": [
@@ -260,6 +265,13 @@
 			"lineHeight": "1"
 		}
 	},
+	"customTemplates": [
+		{
+			"name": "page-contact",
+			"title": "Kontakt",
+			"postTypes": ["page"]
+		}
+	],
 	"templateParts": [
 		{
 			"area": "header",
