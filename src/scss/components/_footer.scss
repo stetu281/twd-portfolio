@@ -1,7 +1,58 @@
+@use "../basics/variables" as *;
+@use "../basics/mixins" as *;
+
 .footer {
+	h1 {
+		strong {
+			background: unset;
+			background-clip: unset;
+			-webkit-text-fill-color: white;
+		}
+	}
+
+	p {
+		max-width: 30rem;
+	}
+
 	&__copy {
 		color: var(--wp--preset--color--white);
 		font-size: 1.5rem;
 		font-weight: 600;
+	}
+
+	nav {
+		margin-block-start: 0.5rem;
+
+		ul li a span {
+			transition: color 0.3s ease;
+
+			&:hover {
+				color: var(--wp--preset--color--white);
+			}
+		}
+	}
+
+	@include breakpoint(880px) {
+		&__flex {
+			flex-direction: row;
+			align-items: flex-end;
+			justify-content: space-between;
+
+			& .logo {
+				justify-content: flex-start;
+
+				h1 {
+					font-size: 3rem !important;
+				}
+			}
+
+			p {
+				text-align: left;
+			}
+
+			nav ul {
+				justify-content: flex-end;
+			}
+		}
 	}
 }
