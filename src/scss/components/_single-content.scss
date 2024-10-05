@@ -1,0 +1,18 @@
+@use "../basics/variables" as *;
+@use "../basics/mixins" as *;
+
+.singleContent {
+	@include breakpoint($w_md) {
+		&__grid {
+			grid-template-columns: 3fr 1.5fr;
+			gap: 2rem;
+		}
+	}
+
+	@include breakpoint($w_lg) {
+		&__grid {
+			grid-template-columns: 3fr 1fr;
+			gap: 4rem;
+		}
+	}
+}

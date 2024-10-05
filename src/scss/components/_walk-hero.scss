@@ -1,0 +1,26 @@
+@use "../basics/variables" as *;
+@use "../basics/mixins" as *;
+
+.walk {
+	&__text {
+		p {
+			max-width: 40rem;
+		}
+	}
+
+	@include breakpoint($w_lg) {
+		&__text {
+			p {
+				max-width: 50rem;
+			}
+		}
+	}
+
+	@include breakpoint($w_xl) {
+		&__text {
+			p {
+				max-width: 60rem;
+			}
+		}
+	}
+}

@@ -16,6 +16,9 @@
 
 		&--title {
 			z-index: 2;
+			animation: fadeOut 1ms linear both;
+			animation-timeline: view();
+			animation-range: contain 30% exit 20%;
 
 			@supports (animation-timeline: view()) {
 				@keyframes fadeOut {
@@ -23,10 +26,6 @@
 						opacity: 0;
 					}
 				}
-
-				animation: fadeOut 1ms linear both;
-				animation-timeline: view();
-				animation-range: contain 30% exit 20%;
 			}
 		}
 
@@ -76,21 +75,23 @@
 			}
 
 			@supports (animation-timeline: view()) {
+				animation: slide 1ms linear both;
+				animation-timeline: view();
+				animation-range: contain 20% exit 100%;
+				view-timeline-inset: 25%;
+
 				@keyframes slide {
 					to {
 						transform: translateX(-90%);
 					}
 				}
-
-				animation: slide 1ms linear both;
-				animation-timeline: view();
-				animation-range: contain 20% exit 100%;
-				view-timeline-inset: 25%;
 			}
 		}
 	}
 
 	@include breakpoint($w_sm) {
+		margin-top: var(--wp--preset--spacing--100) !important;
+
 		&__slider {
 			&--imgContainer {
 				transform: translateX(-5%);
@@ -110,5 +111,9 @@
 				margin-top: var(--wp--preset--spacing--90) !important;
 			}
 		}
+	}
+
+	@include breakpoint($w_xxl) {
+		margin-top: 14rem !important;
 	}
 }

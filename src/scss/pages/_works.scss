@@ -1,0 +1,11 @@
+@use "../basics/variables" as *;
+@use "../basics/mixins" as *;
+@use "../components/portfolio-hero" as *;
+@use "../components/works-websites" as *;
+@use "../components/works-design" as *;
+@use "../components/works-misc" as *;
+@use "../components/sticky-nav" as *;
+
+.works {
+	margin-top: -30%;
+}

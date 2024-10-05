@@ -109,6 +109,7 @@
 		height: unset;
 		z-index: unset;
 		transform: unset;
+		transition: unset;
 
 		ul {
 			padding: unset;
@@ -117,12 +118,31 @@
 			flex-direction: row;
 			gap: 1rem;
 			transform: unset;
+			background-color: unset;
+			transition: unset;
 
 			li {
 				transform: unset;
+				transition: unset;
+				width: unset;
+
+				&:nth-of-type(1),
+				&:nth-of-type(2),
+				&:nth-of-type(3),
+				&:nth-of-type(4) {
+					transition: unset;
+				}
 
 				&:not(:first-of-type) {
 					border-top: unset;
+				}
+
+				&:last-of-type {
+					&::before {
+						content: "|";
+						padding-right: 1rem;
+						color: rgba(white, 0.5);
+					}
 				}
 
 				a {

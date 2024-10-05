@@ -1,15 +1,12 @@
 @use "./components/header" as *;
 @use "./components/footer" as *;
-@use "./components/hero" as *;
-@use "./components/fp-works" as *;
-@use "./components/about" as *;
-@use "./components/fp-blog" as *;
-@use "./components/portfolio-hero" as *;
-@use "./components/works" as *;
-@use "./components/contact-hero" as *;
-@use "./components/contact" as *;
+@use "./pages/frontpage" as *;
+@use "./pages/works" as *;
+@use "./pages/walking" as *;
+@use "./pages/contact" as *;
 @use "./basics/variables" as *;
 @use "./basics/mixins" as *;
+@use "./pages/single" as *;
 
 * {
 	box-sizing: border-box;
@@ -33,7 +30,8 @@ h6 {
 	line-height: var(--wp--custom--line-height--heading);
 }
 
-h1 {
+h1,
+h2 {
 	strong {
 		background: linear-gradient(90deg, #7d87e2, #f7beda);
 		background-clip: text;

@@ -93,15 +93,15 @@
 		}
 
 		@supports (animation-timeline: view()) {
+			animation: slideOut 1ms linear both;
+			animation-timeline: view();
+			animation-range: contain 80% exit 70%;
+
 			@keyframes slideOut {
 				to {
 					transform: translateY(-70%);
 				}
 			}
-
-			animation: slideOut 1ms linear both;
-			animation-timeline: view();
-			animation-range: contain 80% exit 70%;
 		}
 	}
 

@@ -1,0 +1,55 @@
+@use "../basics/variables" as *;
+@use "../basics/mixins" as *;
+
+.loop {
+	&__grid {
+		li {
+			background-color: var(--wp--preset--color--black-light);
+			border-radius: 1.5rem;
+
+			figure {
+				overflow: hidden;
+				border-radius: 1.5rem 1.5rem 0 0;
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					aspect-ratio: 16 / 9;
+
+					transition: scale 0.5s ease;
+				}
+
+				&:hover {
+					img {
+						scale: 1.03;
+					}
+				}
+			}
+		}
+	}
+
+	&__text {
+		padding: 0.5rem 1.5rem 2.5rem 1.5rem;
+
+		a {
+			transition: color 0.3s ease;
+
+			&:hover {
+				color: var(--wp--preset--color--blue) !important;
+			}
+		}
+	}
+
+	@include breakpoint($w_md) {
+		&__grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@include breakpoint($w_xl) {
+		&__grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+}

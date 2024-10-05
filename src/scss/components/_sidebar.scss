@@ -1,0 +1,34 @@
+@use "../basics/variables" as *;
+@use "../basics/mixins" as *;
+
+.sidebar {
+	align-self: start;
+
+	@include breakpoint($w_md) {
+		position: sticky;
+		top: 10rem;
+
+		&__cover {
+			h2 {
+				font-size: var(--wp--preset--font-size--subtitle) !important;
+
+				a {
+					text-decoration: none;
+					transition: opacity 0.3s ease;
+
+					&:hover {
+						opacity: 0.5;
+					}
+				}
+			}
+
+			img {
+				transition: scale 0.5s ease;
+			}
+
+			img:has(~ .wp-block-cover__inner-container:hover) {
+				scale: 1.1;
+			}
+		}
+	}
+}

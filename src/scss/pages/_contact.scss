@@ -1,5 +1,6 @@
 @use "../basics/variables" as *;
 @use "../basics/mixins" as *;
+@use "../components/contact-hero" as *;
 
 .contact {
 	&__text {

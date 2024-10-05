@@ -19,7 +19,7 @@
 			background-position: right;
 			background-clip: text;
 			-webkit-text-fill-color: transparent;
-			transition: background-position 1.8s ease;
+			transition: background-position 3s ease;
 
 			&--in {
 				background-position: left;
@@ -34,9 +34,9 @@
 				background-image: linear-gradient(
 					-45deg,
 					transparent 40%,
-					#91f6ef 46%,
-					#dafff8 50%,
-					#c9cbfd 100%
+					#f3f3f370 46%,
+					#fff9dab3 50%,
+					#c9ccfd3d 100%
 				);
 				z-index: 0;
 				text-align: left;
@@ -53,16 +53,16 @@
 			}
 
 			@supports (animation-timeline: view()) {
+				background-color: var(--wp--preset--color--black);
+				animation: changeBg 1ms linear forwards;
+				animation-timeline: view();
+				animation-range: entry 40% entry 75%;
+
 				@keyframes changeBg {
 					to {
 						background-color: var(--wp--preset--color--white);
 					}
 				}
-
-				background-color: var(--wp--preset--color--black);
-				animation: changeBg 1ms linear forwards;
-				animation-timeline: view();
-				animation-range: entry 40% entry 75%;
 			}
 		}
 	}
@@ -82,6 +82,16 @@
 		&__work {
 			&--title {
 				text-align: right;
+			}
+
+			&--two {
+				figure {
+					order: -1;
+				}
+
+				.fp-works__grid {
+					gap: 4rem;
+				}
 			}
 		}
 
