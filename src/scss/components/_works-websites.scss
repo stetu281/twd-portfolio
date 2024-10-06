@@ -29,18 +29,21 @@
 		}
 	}
 
-	@include breakpoint($w_md) {
+	@include breakpoint($w_lg) {
 		&__grid {
 			grid-template-columns: repeat(2, 1fr);
 			column-gap: var(--wp--preset--spacing--60);
+
+			h1 {
+				grid-column: span 2;
+			}
 		}
 
 		&__half {
 			grid-column: span 1;
 		}
 
-		&__full,
-		h1 {
+		&__full {
 			grid-column: span 2;
 		}
 	}
