@@ -3,6 +3,10 @@
 
 .about {
 	@include breakpoint($w_sm) {
+		h1 {
+			font-size: var(--wp--preset--font-size--slider) !important;
+		}
+
 		&__imgGrid {
 			grid-template-columns: repeat(2, 1fr);
 			grid-template-rows: 1.5fr 1fr;
