@@ -1,6 +1,7 @@
 body {
 	.wp-block-button {
 		&__link {
+			padding: 0.5rem 1rem;
 			font-size: var(--wp--preset--font-size--paragraph-base);
 			background-color: transparent;
 			border: 2px solid var(--wp--preset--color--white);
@@ -29,6 +30,12 @@ body {
 					fill: var(--wp--preset--color--black);
 				}
 			}
+		}
+	}
+
+	@media screen and (min-width: 768px) {
+		&__link {
+			padding: 0.75rem 1.5rem;
 		}
 	}
 }

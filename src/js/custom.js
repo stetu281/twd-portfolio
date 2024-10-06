@@ -73,3 +73,55 @@ if (document.body.classList.contains('page-id-18')) {
 
 	videoObserver.observe(video);
 }
+
+//Works Section Observer
+if (document.body.classList.contains('page-id-18')) {
+	const sections = document.querySelectorAll('.works__section');
+	const navLinks = document.querySelectorAll('.works__navigation ul li a');
+	const sectionOptions = { threshold: 0, rootMargin: '-30% 0px -70% 0px' };
+
+	const sectionObserver = new IntersectionObserver((entries, observer) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				switch (entry.target.id) {
+					case 'websites':
+						navLinks[0].parentElement.classList.add(
+							'activeSectionLink'
+						);
+						break;
+					case 'designs':
+						navLinks[1].parentElement.classList.add(
+							'activeSectionLink'
+						);
+						break;
+					case 'webapps':
+						navLinks[2].parentElement.classList.add(
+							'activeSectionLink'
+						);
+				}
+			} else {
+				switch (entry.target.id) {
+					case 'websites':
+						navLinks[0].parentElement.classList.remove(
+							'activeSectionLink'
+						);
+						break;
+					case 'designs':
+						navLinks[1].parentElement.classList.remove(
+							'activeSectionLink'
+						);
+						break;
+					case 'webapps':
+						navLinks[2].parentElement.classList.remove(
+							'activeSectionLink'
+						);
+						break;
+				}
+			}
+		});
+	}, sectionOptions);
+
+	sections.forEach((section) => {
+		sectionObserver.observe(section);
+	});
+}

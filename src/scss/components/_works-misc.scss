@@ -32,6 +32,12 @@
 		}
 	}
 
+	@include breakpoint($w_sm) {
+		&__textContainer {
+			padding: 0 0.75rem;
+		}
+	}
+
 	@include breakpoint(865px) {
 		&__embed {
 			&--clicker {

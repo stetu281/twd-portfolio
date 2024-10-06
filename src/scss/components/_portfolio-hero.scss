@@ -48,6 +48,7 @@
 
 	&__img {
 		img {
+			opacity: 0;
 			animation: loadPortfolioImgs 0.8s ease forwards;
 		}
 
@@ -106,6 +107,8 @@
 	}
 
 	@include breakpoint($w_sm) {
+		margin-top: var(--wp--preset--spacing--100) !important;
+
 		&__grid {
 			width: 100%;
 			max-width: var(--wp--style--global--wide-size) !important;
@@ -179,6 +182,8 @@
 	}
 
 	@include breakpoint($w_lg) {
+		margin-top: 15rem !important;
+
 		&__img {
 			@supports (animation-timeline: view()) {
 				&--p1,
