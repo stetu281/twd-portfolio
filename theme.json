@@ -235,6 +235,15 @@
 					},
 					"size": "17rem",
 					"slug": "fp-work-title"
+				},
+				{
+					"name": "Portfolio Section Title",
+					"fluid": {
+						"min": "3.25rem",
+						"max": "18rem"
+					},
+					"size": "18rem",
+					"slug": "port-section-title"
 				}
 			]
 		},
