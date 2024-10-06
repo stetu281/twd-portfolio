@@ -26,28 +26,50 @@ titles.forEach((title) => {
 	titleObserver.observe(title);
 });
 
-//Video Observer
-const video = document.querySelector('.guitar__video video');
-const videoOptions = { threshold: 0.9, rootMargin: '0px' };
-
-const videoObserver = new IntersectionObserver((entries, observer) => {
+//Animation Reveal Observer
+const revealItems = document.querySelectorAll('.reveal');
+const revealOptions = {
+	threshold: 0.2,
+	rootMargin: '700px 0px -100px',
+};
+const revealObserver = new IntersectionObserver((entries, observer) => {
 	entries.forEach((entry) => {
-		const element = entry.target.parentElement.parentElement;
-
 		if (entry.isIntersecting) {
-			video.play();
-			element.classList.remove('paused');
-			element.classList.add('animate');
-			element.classList.add('in');
-		} else {
-			video.pause();
-			element.classList.add('paused');
-			element.classList.remove('in');
-			if (video.currentTime == 8) {
-				element.classList.remove('animate');
-			}
+			entry.target.classList.add('reveal--active');
+			observer.unobserve(entry.target);
 		}
 	});
-}, videoOptions);
+}, revealOptions);
 
-videoObserver.observe(video);
+revealItems.forEach((item) => {
+	revealObserver.observe(item);
+});
+
+//Video Observer
+
+if (document.body.classList.contains('page-id-18')) {
+	const video = document.querySelector('.guitar__video video');
+	const videoOptions = { threshold: 0.9, rootMargin: '0px' };
+
+	const videoObserver = new IntersectionObserver((entries, observer) => {
+		entries.forEach((entry) => {
+			const element = entry.target.parentElement.parentElement;
+
+			if (entry.isIntersecting) {
+				video.play();
+				element.classList.remove('paused');
+				element.classList.add('animate');
+				element.classList.add('in');
+			} else {
+				video.pause();
+				element.classList.add('paused');
+				element.classList.remove('in');
+				if (video.currentTime == 8) {
+					element.classList.remove('animate');
+				}
+			}
+		});
+	}, videoOptions);
+
+	videoObserver.observe(video);
+}

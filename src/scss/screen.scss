@@ -6,6 +6,8 @@
 @use "./pages/contact" as *;
 @use "./basics/variables" as *;
 @use "./basics/mixins" as *;
+@use "./basics/placeholders" as *;
+
 @use "./pages/single" as *;
 
 * {
@@ -36,6 +38,22 @@ h2 {
 		background: linear-gradient(90deg, #7d87e2, #f7beda);
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
+	}
+}
+
+div.reveal {
+	@extend %textIn;
+
+	&--active {
+		@extend %textOut;
+	}
+}
+
+figure.reveal {
+	@extend %imgIn;
+
+	&--active {
+		@extend %imgOut;
 	}
 }
 

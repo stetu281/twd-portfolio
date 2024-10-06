@@ -10,3 +10,24 @@
 		background-color: var(--wp--preset--color--black-light);
 	}
 }
+
+%textIn {
+	transform: translateY(3.5rem);
+	opacity: 0;
+	transition: all 0.7s ease;
+}
+
+%textOut {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+%imgIn {
+	@extend %textIn;
+	scale: 0.95;
+}
+
+%imgOut {
+	@extend %textOut;
+	scale: 1;
+}
