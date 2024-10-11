@@ -58,6 +58,11 @@
 					"slug": "yellow-light",
 					"color": "#ffe19f",
 					"name": "Gelb-Hell"
+				},
+				{
+					"slug": "red",
+					"color": "#ff5d74",
+					"name": "Pink-Rot"
 				}
 			],
 			"gradients": [
