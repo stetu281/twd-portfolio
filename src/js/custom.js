@@ -8,24 +8,6 @@ document.querySelector('.hamburger').addEventListener('click', (e) => {
 document.querySelector('.footer__copy--year').innerText =
 	new Date().getFullYear();
 
-//Frontpage Works Title Animation Observer
-const titles = document.querySelectorAll('.fp-works__work--title');
-const titleOptions = { threshold: 0, rootMargin: '0% 0% -50% 0%' };
-
-const titleObserver = new IntersectionObserver((entries, observer) => {
-	entries.forEach((title) => {
-		if (title.isIntersecting) {
-			title.target.classList.add('fp-works__work--title--in');
-		} else {
-			title.target.classList.remove('fp-works__work--title--in');
-		}
-	});
-}, titleOptions);
-
-titles.forEach((title) => {
-	titleObserver.observe(title);
-});
-
 //Animation Reveal Observer
 const revealItems = document.querySelectorAll('.reveal');
 const revealOptions = {

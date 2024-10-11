@@ -26,6 +26,21 @@ module.exports = {
 		entry: {
 			...blockStylesheets(),
 			'js/custom': path.resolve(process.cwd(), 'src/js', 'custom.js'),
+			'js/page-home': path.resolve(
+				process.cwd(),
+				'src/js',
+				'page-home.js'
+			),
+			'js/page-works': path.resolve(
+				process.cwd(),
+				'src/js',
+				'page-works.js'
+			),
+			'js/page-walking': path.resolve(
+				process.cwd(),
+				'src/js',
+				'page-walking.js'
+			),
 			'css/screen': path.resolve(
 				process.cwd(),
 				'src/scss',
