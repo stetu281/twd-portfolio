@@ -99,8 +99,9 @@
 				font-size: var(--wp--preset--font-size--paragraph-base);
 				outline: none;
 				border: 2px solid var(--wp--preset--color--white);
-				border-radius: 1rem;
+				border-radius: 0.75rem;
 				background-color: transparent;
+				font-family: var(--wp--preset--font-family--poppins);
 
 				&:active,
 				&:focus {
@@ -134,6 +135,41 @@
 				padding: 1.5rem;
 				resize: none;
 			}
+
+			.wpcf7-not-valid-tip {
+				margin-top: 0.25rem;
+				color: var(--wp--preset--color--red);
+			}
+
+			.wpcf7-response-output {
+				padding: 0.5rem;
+				line-height: 110%;
+				font-size: var(--wp--preset--font-size--paragraph-base);
+			}
+		}
+	}
+
+	@include breakpoint($w_md) {
+		&__grid {
+			grid-template-columns: 1fr 1.6fr;
+		}
+
+		&__text {
+			margin-top: 3rem !important;
+		}
+
+		&__form {
+			margin-top: unset !important;
+
+			form {
+				padding: 2.5rem;
+			}
+		}
+	}
+
+	@include breakpoint($w_xl) {
+		&__grid {
+			gap: 4rem;
 		}
 	}
 }
