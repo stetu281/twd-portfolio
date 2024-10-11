@@ -58,6 +58,10 @@ figure.reveal {
 	}
 }
 
+.ioSection__navigation {
+	scroll-margin-top: 10rem;
+}
+
 @include breakpoint($w_md) {
 	p {
 		font-size: var(--wp--preset--font-size--paragraph-large) !important;

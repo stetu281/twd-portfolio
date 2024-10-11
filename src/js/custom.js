@@ -74,10 +74,15 @@ if (document.body.classList.contains('page-id-18')) {
 	videoObserver.observe(video);
 }
 
-//Works Section Observer
-if (document.body.classList.contains('page-id-18')) {
-	const sections = document.querySelectorAll('.works__section');
-	const navLinks = document.querySelectorAll('.works__navigation ul li a');
+//Works and Article Section Observer
+if (
+	document.body.classList.contains('page-id-18') ||
+	document.body.classList.contains('page-id-486')
+) {
+	const sections = document.querySelectorAll('.ioSection');
+	const navLinks = document.querySelectorAll(
+		'.ioSection__navigation ul li a'
+	);
 	const sectionOptions = { threshold: 0, rootMargin: '-30% 0px -70% 0px' };
 
 	const sectionObserver = new IntersectionObserver((entries, observer) => {
@@ -85,36 +90,49 @@ if (document.body.classList.contains('page-id-18')) {
 			if (entry.isIntersecting) {
 				switch (entry.target.id) {
 					case 'websites':
-						navLinks[0].parentElement.classList.add(
-							'activeSectionLink'
-						);
+						addClass(0);
 						break;
 					case 'designs':
-						navLinks[1].parentElement.classList.add(
-							'activeSectionLink'
-						);
+						addClass(1);
 						break;
 					case 'webapps':
-						navLinks[2].parentElement.classList.add(
-							'activeSectionLink'
-						);
+						addClass(2);
+						break;
+					case 'switzerland':
+						addClass(0);
+						break;
+					case 'france':
+						addClass(1);
+						break;
+					case 'spain':
+						addClass(2);
+						break;
+					case 'misc':
+						addClass(3);
+						break;
 				}
 			} else {
 				switch (entry.target.id) {
 					case 'websites':
-						navLinks[0].parentElement.classList.remove(
-							'activeSectionLink'
-						);
+						removeClass(0);
 						break;
 					case 'designs':
-						navLinks[1].parentElement.classList.remove(
-							'activeSectionLink'
-						);
+						removeClass(1);
 						break;
 					case 'webapps':
-						navLinks[2].parentElement.classList.remove(
-							'activeSectionLink'
-						);
+						removeClass(2);
+						break;
+					case 'switzerland':
+						removeClass(0);
+						break;
+					case 'france':
+						removeClass(1);
+						break;
+					case 'spain':
+						removeClass(2);
+						break;
+					case 'misc':
+						removeClass(3);
 						break;
 				}
 			}
@@ -124,4 +142,36 @@ if (document.body.classList.contains('page-id-18')) {
 	sections.forEach((section) => {
 		sectionObserver.observe(section);
 	});
+
+	function addClass(linkNum) {
+		return navLinks[linkNum].parentElement.classList.add(
+			'activeSectionLink'
+		);
+	}
+
+	function removeClass(linkNum) {
+		return navLinks[linkNum].parentElement.classList.remove(
+			'activeSectionLink'
+		);
+	}
 }
+
+//Calculate Distance Percent
+
+/* const total = parseInt(
+	document.querySelector('.stats__progress--total').innerText,
+	10
+);
+const done = parseInt(
+	document.querySelector('.stats__progress--done').innerText,
+	10
+);
+
+const percent = Math.round((100 / total) * done * 10) / 10;
+
+const percentElement = document.querySelector('.stats__progress--percent');
+
+percentElement.innerText = `${percent}%`;
+document
+	.querySelector('.stats__progress--bar')
+	.style.setProperty('--percent', `${percent}%`); */

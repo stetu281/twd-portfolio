@@ -9,10 +9,6 @@
 .works {
 	margin-top: -30%;
 
-	&__section {
-		scroll-margin-top: 10rem;
-	}
-
 	@include breakpoint($w_sm) {
 		margin-top: -20%;
 	}
