@@ -67,6 +67,34 @@ function starter_frontend_scripts() {
   wp_enqueue_script( 'starter-frontend-scripts', get_theme_file_uri() . '/assets/js/custom.js', $asset['dependencies'], $asset['version'], true);
 }
 
+/**
+ * Enqueue js for works page
+ */
+add_action('wp_enqueue_scripts', 'work_page_scripts');
+
+function work_page_scripts() {
+  if(is_page(18)) {
+
+    $asset = include get_theme_file_path() . '/assets/js/page-works.asset.php';
+
+    wp_enqueue_script('work_page_scripts', get_theme_file_uri() . '/assets/js/page-works.js', $asset['dependencies'], $asset['version'], true );
+  }
+}
+
+/**
+ * Enqueue js for walking Articles page
+ */
+add_action('wp_enqueue_scripts', 'walking_page_scripts');
+
+function walking_page_scripts() {
+  if(is_page(486)) {
+
+    $asset = include get_theme_file_path() . '/assets/js/page-walking.asset.php';
+
+    wp_enqueue_script('walking_page_scripts', get_theme_file_uri() . '/assets/js/page-walking.js', $asset['dependencies'], $asset['version'], true );
+  }
+}
+
 /** * Completely Remove jQuery From WordPress */
 function my_init() {
   if (!is_admin()) {
