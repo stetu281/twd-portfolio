@@ -20,8 +20,7 @@ function starter_enqueue_block_styles()
 
   //add block name for each style
   $blocks = array(
-    'core/button',
-    'core/heading'
+    'core/button'
   );
 
   foreach ($blocks as $block) {
@@ -53,6 +52,103 @@ function starter_enqueue_main_styles() {
     $asset['dependencies'],
     $asset['version']
   );
+};
+
+/**
+ * Enqueue Frontpage Stylesheet
+ */
+add_action('wp_enqueue_scripts', 'starter_enqueue_frontpage_styles');
+
+function starter_enqueue_frontpage_styles() {
+
+  if(is_page(16)) {
+    $asset = include get_theme_file_path( 'assets/css/frontpage.asset.php');
+
+    wp_enqueue_style(
+      'frontpage-style',
+      get_theme_file_uri( 'assets/css/frontpage.css' ),
+      $asset['dependencies'],
+      $asset['version']
+    );  
+  }
+
+
+};
+
+/**
+ * Enqueue Works Page Stylesheet
+ */
+add_action('wp_enqueue_scripts', 'starter_enqueue_works_styles');
+
+function starter_enqueue_works_styles() {
+
+  if(is_page(18)) {
+    $asset = include get_theme_file_path( 'assets/css/works.asset.php');
+
+    wp_enqueue_style(
+      'works-style',
+      get_theme_file_uri( 'assets/css/works.css' ),
+      $asset['dependencies'],
+      $asset['version']
+    );
+  }
+};
+
+/**
+ * Enqueue Contact Page Stylesheet
+ */
+add_action('wp_enqueue_scripts', 'starter_enqueue_contact_styles');
+
+function starter_enqueue_contact_styles() {
+
+  if(is_page(20)) {
+    $asset = include get_theme_file_path( 'assets/css/contact.asset.php');
+
+    wp_enqueue_style(
+      'contact-style',
+      get_theme_file_uri( 'assets/css/contact.css' ),
+      $asset['dependencies'],
+      $asset['version']
+    );
+  }
+};
+
+/**
+ * Enqueue Walking Page Stylesheet
+ */
+add_action('wp_enqueue_scripts', 'starter_enqueue_walking_styles');
+
+function starter_enqueue_walking_styles() {
+
+  if(is_page(486)) {
+    $asset = include get_theme_file_path( 'assets/css/walking.asset.php');
+
+    wp_enqueue_style(
+      'walking-style',
+      get_theme_file_uri( 'assets/css/walking.css' ),
+      $asset['dependencies'],
+      $asset['version']
+    );
+  }
+};
+
+/**
+ * Enqueue Single Article Stylesheet
+ */
+add_action('wp_enqueue_scripts', 'starter_enqueue_single_styles');
+
+function starter_enqueue_single_styles() {
+
+  if(is_single()) {
+    $asset = include get_theme_file_path( 'assets/css/walking.asset.php');
+
+    wp_enqueue_style(
+      'single-style',
+      get_theme_file_uri( 'assets/css/single.css' ),
+      $asset['dependencies'],
+      $asset['version']
+    );
+  }
 };
 
 /**

@@ -51,6 +51,31 @@ module.exports = {
 				'src/scss/',
 				'editor.scss'
 			),
+			'css/frontpage': path.resolve(
+				process.cwd(),
+				'src/scss/pages/',
+				'frontpage.scss'
+			),
+			'css/works': path.resolve(
+				process.cwd(),
+				'src/scss/pages/',
+				'works.scss'
+			),
+			'css/contact': path.resolve(
+				process.cwd(),
+				'src/scss/pages/',
+				'contact.scss'
+			),
+			'css/walking': path.resolve(
+				process.cwd(),
+				'src/scss/pages/',
+				'walking.scss'
+			),
+			'css/single': path.resolve(
+				process.cwd(),
+				'src/scss/pages/',
+				'single.scss'
+			),
 		},
 	},
 	plugins: [

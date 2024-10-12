@@ -1,14 +1,8 @@
 @use "./components/header" as *;
 @use "./components/footer" as *;
-@use "./pages/frontpage" as *;
-@use "./pages/works" as *;
-@use "./pages/walking" as *;
-@use "./pages/contact" as *;
 @use "./basics/variables" as *;
 @use "./basics/mixins" as *;
 @use "./basics/placeholders" as *;
-
-@use "./pages/single" as *;
 
 * {
 	box-sizing: border-box;
