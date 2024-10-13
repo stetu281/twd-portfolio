@@ -39,30 +39,39 @@ function starter_enqueue_block_styles()
 };
 
 /**
- * Enqueue Custom Stylesheets
+ * Enqueue Custom css and js
  */
 add_action('wp_enqueue_scripts', 'starter_enqueue_main_styles');
 
 function starter_enqueue_main_styles() {
   $asset = include get_theme_file_path( 'assets/css/screen.asset.php');
+  $js_asset = include get_theme_file_path() . '/assets/js/custom.asset.php';
 
   wp_enqueue_style(
-    'starter-style',
+    'basic-style',
     get_theme_file_uri( 'assets/css/screen.css' ),
     $asset['dependencies'],
     $asset['version']
   );
+
+  wp_enqueue_script( 
+    'basic-scripts', 
+    get_theme_file_uri() . '/assets/js/custom.js', 
+    $js_asset['dependencies'], 
+    $js_asset['version'], true);
 };
 
 /**
- * Enqueue Frontpage Stylesheet
+ * Enqueue Frontpage css and js
  */
 add_action('wp_enqueue_scripts', 'starter_enqueue_frontpage_styles');
 
 function starter_enqueue_frontpage_styles() {
 
-  if(is_page(16)) {
+  if(is_page(array(16, 'home'))) {
     $asset = include get_theme_file_path( 'assets/css/frontpage.asset.php');
+
+    $js_asset = include get_theme_file_path('assets/js/page-home.asset.php');
 
     wp_enqueue_style(
       'frontpage-style',
@@ -70,13 +79,18 @@ function starter_enqueue_frontpage_styles() {
       $asset['dependencies'],
       $asset['version']
     );  
-  }
 
-
+    wp_enqueue_script(
+      'frontpage-scripts',
+      get_theme_file_uri() . '/assets/js/page-home.js',
+      $js_asset['dependencies'],
+      $js_asset['version'], true
+    );
+  };
 };
 
 /**
- * Enqueue Works Page Stylesheet
+ * Enqueue Works Page css and js
  */
 add_action('wp_enqueue_scripts', 'starter_enqueue_works_styles');
 
@@ -84,6 +98,7 @@ function starter_enqueue_works_styles() {
 
   if(is_page(18)) {
     $asset = include get_theme_file_path( 'assets/css/works.asset.php');
+    $js_asset = include get_theme_file_path() . '/assets/js/page-works.asset.php';
 
     wp_enqueue_style(
       'works-style',
@@ -91,11 +106,17 @@ function starter_enqueue_works_styles() {
       $asset['dependencies'],
       $asset['version']
     );
+
+    wp_enqueue_script(
+      'work_page_scripts', 
+      get_theme_file_uri() . '/assets/js/page-works.js', 
+      $js_asset['dependencies'], 
+      $js_asset['version'], true );
   }
 };
 
 /**
- * Enqueue Contact Page Stylesheet
+ * Enqueue Contact Page css and js
  */
 add_action('wp_enqueue_scripts', 'starter_enqueue_contact_styles');
 
@@ -114,7 +135,7 @@ function starter_enqueue_contact_styles() {
 };
 
 /**
- * Enqueue Walking Page Stylesheet
+ * Enqueue Walking Page css and js
  */
 add_action('wp_enqueue_scripts', 'starter_enqueue_walking_styles');
 
@@ -122,6 +143,7 @@ function starter_enqueue_walking_styles() {
 
   if(is_page(486)) {
     $asset = include get_theme_file_path( 'assets/css/walking.asset.php');
+    $js_asset = include get_theme_file_path() . '/assets/js/page-walking.asset.php';
 
     wp_enqueue_style(
       'walking-style',
@@ -129,6 +151,12 @@ function starter_enqueue_walking_styles() {
       $asset['dependencies'],
       $asset['version']
     );
+
+    wp_enqueue_script(
+      'walking_page_scripts', 
+      get_theme_file_uri() . '/assets/js/page-walking.js', 
+      $js_asset['dependencies'], 
+      $js_asset['version'], true );
   }
 };
 
@@ -150,46 +178,6 @@ function starter_enqueue_single_styles() {
     );
   }
 };
-
-/**
- * Enqueue the custom.js file
- */
-add_action('wp_enqueue_scripts', 'starter_frontend_scripts' );
-
-function starter_frontend_scripts() {
-
-  $asset = include get_theme_file_path() . '/assets/js/custom.asset.php';
-
-  wp_enqueue_script( 'starter-frontend-scripts', get_theme_file_uri() . '/assets/js/custom.js', $asset['dependencies'], $asset['version'], true);
-}
-
-/**
- * Enqueue js for works page
- */
-add_action('wp_enqueue_scripts', 'work_page_scripts');
-
-function work_page_scripts() {
-  if(is_page(18)) {
-
-    $asset = include get_theme_file_path() . '/assets/js/page-works.asset.php';
-
-    wp_enqueue_script('work_page_scripts', get_theme_file_uri() . '/assets/js/page-works.js', $asset['dependencies'], $asset['version'], true );
-  }
-}
-
-/**
- * Enqueue js for walking Articles page
- */
-add_action('wp_enqueue_scripts', 'walking_page_scripts');
-
-function walking_page_scripts() {
-  if(is_page(486)) {
-
-    $asset = include get_theme_file_path() . '/assets/js/page-walking.asset.php';
-
-    wp_enqueue_script('walking_page_scripts', get_theme_file_uri() . '/assets/js/page-walking.js', $asset['dependencies'], $asset['version'], true );
-  }
-}
 
 /** * Completely Remove jQuery From WordPress */
 function my_init() {
