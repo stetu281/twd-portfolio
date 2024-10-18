@@ -1,0 +1,57 @@
+<!-- wp:group {"tagName":"aside","metadata":{"name":"Sidebar"},"className":"sidebar","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}},"border":{"radius":"24px"},"position":{"type":""}},"backgroundColor":"black-light","layout":{"type":"default"}} -->
+<aside
+	class="wp-block-group sidebar has-black-light-background-color has-background"
+	style="
+		border-radius: 24px;
+		padding-top: var(--wp--preset--spacing--50);
+		padding-right: var(--wp--preset--spacing--40);
+		padding-bottom: var(--wp--preset--spacing--50);
+		padding-left: var(--wp--preset--spacing--40);
+	"
+>
+	<!-- wp:heading {"level":3} -->
+	<h3 class="wp-block-heading">Weitere Artikel</h3>
+	<!-- /wp:heading -->
+
+	<!-- wp:query {"queryId":40,"query":{"perPage":"2","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false}} -->
+	<div class="wp-block-query">
+		<!-- wp:post-template {"className":"sidebar__cover"} -->
+		<!-- wp:cover {"useFeaturedImage":true,"dimRatio":40,"overlayColor":"black-light","isUserOverlayColor":true,"minHeight":200,"minHeightUnit":"px","style":{"border":{"radius":"24px"}},"layout":{"type":"constrained"}} -->
+		<div
+			class="wp-block-cover"
+			style="border-radius: 24px; min-height: 200px"
+		>
+			<span
+				aria-hidden="true"
+				class="wp-block-cover__background has-black-light-background-color has-background-dim-40 has-background-dim"
+			></span>
+			<div class="wp-block-cover__inner-container">
+				<!-- wp:post-title {"textAlign":"center","isLink":true,"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white","fontSize":"large"} /-->
+			</div>
+		</div>
+		<!-- /wp:cover -->
+		<!-- /wp:post-template -->
+
+		<!-- wp:query-no-results -->
+		<!-- wp:paragraph {"placeholder":"Füge Text oder Blöcke hinzu, die angezeigt werden, wenn eine Abfrage keine Ergebnisse ausgibt."} -->
+		<p></p>
+		<!-- /wp:paragraph -->
+		<!-- /wp:query-no-results -->
+	</div>
+	<!-- /wp:query -->
+
+	<!-- wp:heading {"level":3} -->
+	<h3 class="wp-block-heading">Über mich</h3>
+	<!-- /wp:heading -->
+
+	<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"stretch"}} -->
+	<div class="wp-block-group">
+		<!-- wp:avatar {"style":{"border":{"radius":"8px"}}} /-->
+
+		<!-- wp:paragraph {"fontSize":"base"} -->
+		<p class="has-base-font-size">Text schreiben.</p>
+		<!-- /wp:paragraph -->
+	</div>
+	<!-- /wp:group -->
+</aside>
+<!-- /wp:group -->

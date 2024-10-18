@@ -1,0 +1,41 @@
+<!-- wp:template-part {"slug":"header","theme":"TWD-Portfolio","area":"header"} /-->
+
+<!-- wp:group {"tagName":"section","className":"singleHero","style":{"spacing":{"margin":{"top":"var:preset|spacing|100"}}},"layout":{"type":"constrained"}} -->
+<section
+	class="wp-block-group singleHero"
+	style="margin-top: var(--wp--preset--spacing--100)"
+>
+	<!-- wp:group {"align":"wide","className":"singleHero__grid","layout":{"type":"grid","columnCount":1,"minimumColumnWidth":null}} -->
+	<div class="wp-block-group alignwide singleHero__grid">
+		<!-- wp:group {"layout":{"type":"constrained"}} -->
+		<div class="wp-block-group">
+			<!-- wp:post-date {"textAlign":"center","format":"j. F Y","className":"singleHero__date","style":{"elements":{"link":{"color":{"text":"var:preset|color|yellow-light"}}}},"textColor":"yellow-light","fontSize":"paragraph-base"} /-->
+
+			<!-- wp:post-title {"textAlign":"center","level":1,"style":{"spacing":{"margin":{"top":"var:preset|spacing|20"}}},"fontSize":"xx-large"} /-->
+		</div>
+		<!-- /wp:group -->
+
+		<!-- wp:post-excerpt {"textAlign":"center","className":"singleHero__excerpt"} /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:post-featured-image {"aspectRatio":"auto","width":"100%","height":"700px","align":"wide","style":{"border":{"radius":"24px"}}} /-->
+</section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"main","metadata":{"name":"Post Inhalt"},"className":"singleContent","style":{"spacing":{"margin":{"top":"var:preset|spacing|90"}}},"layout":{"type":"constrained","wideSize":"1800px"}} -->
+<main
+	class="wp-block-group singleContent"
+	style="margin-top: var(--wp--preset--spacing--90)"
+>
+	<!-- wp:group {"align":"wide","className":"singleContent__grid","layout":{"type":"grid","columnCount":1,"minimumColumnWidth":null}} -->
+	<div class="wp-block-group alignwide singleContent__grid">
+		<!-- wp:post-content {"align":"wide"} /-->
+
+		<!-- wp:template-part {"slug":"sidebar","theme":"TWD-Portfolio","tagName":"aside"} /-->
+	</div>
+	<!-- /wp:group -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","theme":"TWD-Portfolio","area":"footer"} /-->
