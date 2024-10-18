@@ -1,6 +1,9 @@
 @use "../basics/variables" as *;
 @use "../basics/mixins" as *;
 
+@include slideAnimation("contact-title-animation", 5rem, 0, 0, 1, 20px, 0);
+@include slideAnimation("contact-img-animation", -5rem, 0, 0, 1, 20px, 0);
+
 .contactHero {
 	&__text {
 		gap: 0;
@@ -14,15 +17,21 @@
 			font-size: 22.5vw;
 			line-height: 110%;
 			font-weight: 900;
+			opacity: 0;
+			animation: contact-title-animation 1.2s ease 0s forwards;
 		}
 
 		h2 {
 			max-width: 35rem;
+			opacity: 0;
+			animation: contact-title-animation 1.2s ease 0.2s forwards;
 		}
 	}
 
 	&__img {
 		display: none;
+		opacity: 0;
+		animation: contact-img-animation 1.2s ease 0.4s forwards;
 	}
 
 	@include breakpoint($w_sm) {

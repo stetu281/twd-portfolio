@@ -41,7 +41,7 @@
 				},
 				{
 					"slug": "black-light",
-					"color": "#1F1F1F",
+					"color": "#181818",
 					"name": "Hintergrund Dunkel"
 				},
 				{
@@ -284,16 +284,28 @@
 			"name": "page-contact",
 			"title": "Kontakt",
 			"postTypes": ["page"]
+		},
+		{
+			"name": "single-with-sidebar",
+			"postTypes": ["post"],
+			"title": "Beitrag mit Sidebar"
 		}
 	],
 	"templateParts": [
 		{
 			"area": "header",
-			"name": "header"
+			"name": "header",
+			"title": "Header"
 		},
 		{
 			"area": "footer",
-			"name": "footer"
+			"name": "footer",
+			"title": "Footer"
+		},
+		{
+			"area": "uncategorized",
+			"name": "sidebar",
+			"title": "Sidebar"
 		}
 	]
 }

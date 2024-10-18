@@ -1,7 +1,7 @@
 @use "../basics/variables" as *;
 @use "../basics/mixins" as *;
 
-.singleHero {
+/* .singleHero {
 	&__grid {
 		align-items: center;
 	}
@@ -57,6 +57,38 @@
 	@include breakpoint($w_md) {
 		&__img {
 			min-height: 40rem;
+		}
+	}
+} */
+
+.singleHero {
+	@include breakpoint($w_md) {
+		&__grid {
+			padding: 0 1rem;
+			grid-template-columns: repeat(2, 1fr);
+			align-items: end;
+			justify-items: end;
+			gap: 2rem;
+
+			div:first-of-type {
+				justify-self: start;
+			}
+
+			h1,
+			.singleHero__date {
+				text-align: left;
+			}
+		}
+
+		&__excerpt {
+			text-align: right;
+			max-width: 50rem;
+		}
+	}
+
+	@include breakpoint($w_xl) {
+		&__grid {
+			padding: 0 2rem;
 		}
 	}
 }

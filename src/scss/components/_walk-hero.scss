@@ -10,16 +10,15 @@
 
 	@include breakpoint($w_lg) {
 		&__text {
-			p {
-				max-width: 50rem;
-			}
-		}
-	}
+			padding: 1rem;
 
-	@include breakpoint($w_xl) {
-		&__text {
+			h1 {
+				font-size: var(--wp--preset--font-size--slider) !important;
+			}
+
 			p {
-				max-width: 60rem;
+				width: 50%;
+				max-width: 50rem;
 			}
 		}
 	}

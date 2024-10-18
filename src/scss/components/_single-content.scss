@@ -2,7 +2,60 @@
 @use "../basics/mixins" as *;
 
 .singleContent {
+	aside {
+		display: none;
+	}
+
+	&__nav {
+		a {
+			text-decoration: none;
+		}
+
+		.post-navigation-link {
+			&__label {
+				font-weight: 600;
+			}
+
+			&__title {
+				margin-top: 0.5rem;
+				display: block;
+				color: var(--wp--preset--color--yellow-light);
+			}
+
+			&-previous,
+			&-next {
+				transition: scale 0.3s ease;
+
+				&:hover {
+					scale: 1.07;
+				}
+			}
+		}
+	}
+
+	@include breakpoint($w_sm) {
+		&__nav {
+			> div {
+				padding: 0 2rem;
+			}
+
+			a {
+				span.post-navigation-link {
+					&__label {
+						font-size: var(
+							--wp--preset--font-size--paragraph-large
+						);
+					}
+				}
+			}
+		}
+	}
+
 	@include breakpoint($w_md) {
+		aside {
+			display: block;
+		}
+
 		&__grid {
 			grid-template-columns: 3fr 1.5fr;
 			gap: 2rem;

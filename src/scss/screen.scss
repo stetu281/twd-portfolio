@@ -52,12 +52,19 @@ figure.reveal {
 	}
 }
 
-.ioSection__navigation {
+.ioSection {
 	scroll-margin-top: 10rem;
 }
 
 @include breakpoint($w_md) {
 	p {
 		font-size: var(--wp--preset--font-size--paragraph-large) !important;
+	}
+
+	.has-global-padding {
+		&:not(section.hero) {
+			padding-right: 2.5rem;
+			padding-left: 2.5rem;
+		}
 	}
 }

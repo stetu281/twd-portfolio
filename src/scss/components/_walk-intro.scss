@@ -1,0 +1,23 @@
+@use "../basics/variables" as *;
+@use "../basics/mixins" as *;
+
+.walkIntro {
+	&__cols {
+		flex-direction: column;
+	}
+
+	@include breakpoint($w_md) {
+		&__cols {
+			padding: 0 1rem;
+			flex-direction: row;
+			gap: 2rem;
+		}
+	}
+
+	@include breakpoint($w_xl) {
+		&__cols {
+			padding: 0 2rem;
+			gap: 4rem;
+		}
+	}
+}
