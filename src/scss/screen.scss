@@ -13,6 +13,10 @@ body {
 	background-color: var(--wp--preset--color--black);
 }
 
+main {
+	margin-block-start: 0;
+}
+
 p {
 	line-height: var(--wp--custom--line-height--paragraph);
 	font-size: var(--wp--preset--font-size--paragraph-base);
@@ -30,7 +34,7 @@ h6 {
 h1,
 h2 {
 	strong {
-		background: linear-gradient(90deg, #7d87e2, #f7beda);
+		background: linear-gradient(90deg, #7057ff, #ff5d5d);
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}
@@ -61,7 +65,8 @@ figure.reveal {
 		font-size: var(--wp--preset--font-size--paragraph-large) !important;
 	}
 
-	section.has-global-padding {
+	section.has-global-padding,
+	main.has-global-padding {
 		&:not(section.hero) {
 			padding-right: 2.5rem;
 			padding-left: 2.5rem;
