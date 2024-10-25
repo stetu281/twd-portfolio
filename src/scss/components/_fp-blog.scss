@@ -2,13 +2,16 @@
 @use "../basics/mixins" as *;
 
 .blog {
+	.wp-block-query {
+		margin-top: var(--wp--preset--spacing--60);
+	}
+
 	&__card {
 		figure {
 			width: 100%;
-			height: 100%;
 			aspect-ratio: 18 / 10;
 			overflow: hidden;
-			border-radius: 1.5rem 1.5rem 0 0;
+			border-radius: 1.5rem;
 
 			img {
 				width: 100%;
@@ -26,7 +29,12 @@
 	}
 
 	&__textContainer {
-		a {
+		h2 a {
+			color: var(--wp--preset--color--white);
+			text-decoration: none;
+		}
+
+		& > a {
 			transition: color 0.3s ease;
 
 			&:hover {
@@ -35,29 +43,9 @@
 		}
 	}
 
-	.wp-block-query {
-		margin-top: var(--wp--preset--spacing--60);
-	}
-
-	@include breakpoint($w_sm) {
-		&__card {
-			display: flex;
-			align-items: center;
-			gap: 2rem;
-			padding-bottom: var(--wp--preset--spacing--40) !important;
-
-			figure {
-				aspect-ratio: 9 / 16;
-			}
-		}
-
-		&__textContainer {
-			margin-top: 0;
-		}
-	}
-
 	@include breakpoint($w_md) {
 		&__intro {
+			padding: 0 1rem;
 			flex-wrap: nowrap;
 			gap: 3rem;
 			align-items: flex-end;
@@ -69,7 +57,6 @@
 			}
 
 			p {
-				max-width: 45rem;
 				text-align: right;
 			}
 		}
@@ -78,50 +65,71 @@
 			margin-top: var(--wp--preset--spacing--80);
 		}
 
+		&__card {
+			padding: var(--wp--preset--spacing--50) !important;
+		}
+
+		&__grid li {
+			&:not(:first-of-type) {
+				.blog__card {
+					display: flex;
+					align-items: center;
+					gap: var(--wp--preset--spacing--50);
+				}
+
+				figure {
+					aspect-ratio: 1 / 1;
+					max-width: 17rem;
+				}
+
+				.blog__textContainer {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+
+	@include breakpoint($w_lg) {
+		&__intro {
+			padding: 0 2rem;
+		}
+
 		&__grid {
-			grid-template-columns: repeat(2, 1fr);
-			grid-template-rows: repeat(3, 1fr);
+			grid-template-columns: 0.85fr 1fr;
+			grid-template-rows: repeat(3, auto);
 			gap: var(--wp--preset--spacing--40);
 
 			li {
-				&:nth-of-type(1) {
+				&:first-of-type {
 					grid-row: 1 / 4;
 
 					.blog__card {
-						display: block;
-
-						figure {
-							aspect-ratio: 1 / 1;
-						}
+						height: 100%;
 					}
 
-					.blog__textContainer {
-						margin-top: var(--wp--preset--spacing--40);
+					figure {
+						aspect-ratio: 9 / 12;
+						max-height: 600px;
 					}
 				}
 
-				&:not(:nth-of-type(1)) {
+				&:not(:first-of-type) {
 					.blog__card {
-						gap: 1rem;
-						height: 100%;
-
-						figure {
-							aspect-ratio: 1 / 1;
-						}
-
-						h2 {
-							font-size: var(
-								--wp--preset--font-size--paragraph-large
-							) !important;
-						}
-
-						p {
-							font-size: 1rem !important;
-						}
+						gap: var(--wp--preset--spacing--40);
 					}
 
-					.blog__textContainer {
-						padding: 0 !important;
+					figure {
+						max-width: 15rem;
+					}
+
+					h2 {
+						font-size: var(
+							--wp--preset--font-size--paragraph-large
+						) !important;
+					}
+
+					p {
+						font-size: 1.125rem !important;
 					}
 				}
 			}
@@ -130,31 +138,7 @@
 
 	@include breakpoint($w_xl) {
 		&__grid {
-			gap: 1.5rem;
-
-			li {
-				&:nth-of-type(1) {
-					.blog__card {
-						padding: var(--wp--preset--spacing--50) !important;
-
-						figure {
-							aspect-ratio: unset;
-
-							img {
-								max-height: 25rem;
-							}
-						}
-					}
-				}
-
-				&:not(:nth-of-type(1)) {
-					.blog__card {
-						figure {
-							max-width: 10rem;
-						}
-					}
-				}
-			}
+			gap: var(--wp--preset--spacing--50);
 		}
 	}
 }
