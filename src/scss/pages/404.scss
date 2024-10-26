@@ -1,5 +1,6 @@
 @use "../basics/variables" as *;
 @use "../basics/mixins" as *;
+@use "../components/fp-blog" as *;
 
 .notfound {
 	.glow {
