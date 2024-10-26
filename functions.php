@@ -179,6 +179,25 @@ function starter_enqueue_single_styles() {
   }
 };
 
+/**
+ * Enqueue 404 Stylesheet
+ */
+add_action('wp_enqueue_scripts', 'starter_enqueue_404_styles');
+
+function starter_enqueue_404_styles() {
+
+  if(is_404()) {
+    $asset = include get_theme_file_path( 'assets/css/404.asset.php');
+
+    wp_enqueue_style(
+      'single-style',
+      get_theme_file_uri( 'assets/css/404.css' ),
+      $asset['dependencies'],
+      $asset['version']
+    );
+  }
+};
+
 /** * Completely Remove jQuery From WordPress */
 function my_init() {
   if (!is_admin()) {

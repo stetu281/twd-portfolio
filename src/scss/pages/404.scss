@@ -1,0 +1,50 @@
+@use "../basics/variables" as *;
+@use "../basics/mixins" as *;
+
+.notfound {
+	.glow {
+		text-shadow:
+			0 0 7px #fff,
+			0 0 10px #fff,
+			0 0 21px #fff,
+			0 0 42px #bc13fe,
+			0 0 82px #bc13fe,
+			0 0 92px #bc13fe,
+			0 0 102px #bc13fe,
+			0 0 151px #bc13fe;
+	}
+
+	@include breakpoint($w_sm) {
+		h1 {
+			font-size: var(--wp--preset--font-size--xx-large) !important;
+		}
+	}
+
+	@include breakpoint($w_lg) {
+		.wp-block-cover__background {
+			background: linear-gradient(
+				90deg,
+				rgb(0, 0, 0) 0%,
+				rgb(0, 0, 0) 38%,
+				rgba(155, 81, 224, 0.41) 100%
+			) !important;
+		}
+
+		&__grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		&__title {
+			align-content: center;
+
+			h1,
+			p {
+				text-align: left;
+			}
+		}
+
+		.wp-block-buttons {
+			justify-content: flex-start;
+		}
+	}
+}

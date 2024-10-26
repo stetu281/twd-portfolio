@@ -1,7 +1,116 @@
-<!-- wp:template-part {"slug":"header","theme":"TWD-Portfolio","tagName":"header"} /-->
+!-- wp:template-part
+{"slug":"header","theme":"TWD-Portfolio","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"main","layout":{"type":"default"}} -->
-<main class="wp-block-group"><!-- wp:post-content /--></main>
+<!-- wp:group {"tagName":"section","className":"notfound","style":{"spacing":{"margin":{"top":"var:preset|spacing|100"}}},"layout":{"type":"constrained"}} -->
+<section
+	class="wp-block-group notfound"
+	style="margin-top: var(--wp--preset--spacing--100)"
+>
+	<!-- wp:cover {"url":"http://portfolio-development.local/wp-content/uploads/2024/10/pexels-frans-van-heerden-201846-1022692-scaled.webp","id":1132,"hasParallax":true,"isUserOverlayColor":true,"minHeightUnit":"vh","customGradient":"linear-gradient(180deg,rgb(0,0,0) 0%,rgb(0,0,0) 38%,rgba(155,81,224,0.41) 100%)","contentPosition":"top center","align":"wide","style":{"border":{"radius":"24px"},"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}},"layout":{"type":"constrained","wideSize":"1440px"}} -->
+	<div
+		class="wp-block-cover alignwide has-parallax has-custom-content-position is-position-top-center"
+		style="
+			border-radius: 24px;
+			padding-top: var(--wp--preset--spacing--80);
+			padding-bottom: var(--wp--preset--spacing--80);
+		"
+	>
+		<span
+			aria-hidden="true"
+			class="wp-block-cover__background has-background-dim-100 has-background-dim wp-block-cover__gradient-background has-background-gradient"
+			style="
+				background: linear-gradient(
+					180deg,
+					rgb(0, 0, 0) 0%,
+					rgb(0, 0, 0) 38%,
+					rgba(155, 81, 224, 0.41) 100%
+				);
+			"
+		></span>
+		<div
+			class="wp-block-cover__image-background wp-image-1132 has-parallax"
+			style="
+				background-position: 50% 50%;
+				background-image: url(http://portfolio-development.local/wp-content/uploads/2024/10/pexels-frans-van-heerden-201846-1022692-scaled.webp);
+			"
+		></div>
+		<div class="wp-block-cover__inner-container">
+			<!-- wp:group {"align":"full","className":"notfound__grid","layout":{"type":"grid","columnCount":1,"minimumColumnWidth":null}} -->
+			<div class="wp-block-group alignfull notfound__grid">
+				<!-- wp:group {"className":"notfound__title","layout":{"type":"constrained"}} -->
+				<div class="wp-block-group notfound__title">
+					<!-- wp:heading {"textAlign":"center","level":1,"fontSize":"x-large"} -->
+					<h1
+						class="wp-block-heading has-text-align-center has-x-large-font-size"
+					>
+						Sorry... irgendwas ist schiefgegangen
+					</h1>
+					<!-- /wp:heading -->
+
+					<!-- wp:paragraph {"align":"center","fontSize":"subtitle"} -->
+					<p class="has-text-align-center has-subtitle-font-size">
+						Diese Seite wurde entweder gelöscht, ist an einen
+						anderen Ort umgezogen oder existiert nicht.
+					</p>
+					<!-- /wp:paragraph -->
+
+					<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|60"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
+					<div
+						class="wp-block-buttons"
+						style="margin-top: var(--wp--preset--spacing--60)"
+					>
+						<!-- wp:button {"className":"glow","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}}} -->
+						<div class="wp-block-button glow">
+							<a
+								class="wp-block-button__link wp-element-button"
+								style="
+									padding-top: var(--wp--preset--spacing--40);
+									padding-bottom: var(
+										--wp--preset--spacing--40
+									);
+								"
+								>Zurück zur Startseite</a
+							>
+						</div>
+						<!-- /wp:button -->
+					</div>
+					<!-- /wp:buttons -->
+				</div>
+				<!-- /wp:group -->
+
+				<!-- wp:group {"style":{"spacing":{"margin":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
+				<div
+					class="wp-block-group"
+					style="
+						margin-top: var(--wp--preset--spacing--80);
+						margin-bottom: var(--wp--preset--spacing--80);
+					"
+				>
+					<!-- wp:heading {"textAlign":"center","className":"glow","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"typography":{"fontStyle":"normal","fontWeight":"400"}},"textColor":"white","fontSize":"fp-work-title"} -->
+					<h2
+						class="wp-block-heading has-text-align-center glow has-white-color has-text-color has-link-color has-fp-work-title-font-size"
+						style="font-style: normal; font-weight: 400"
+					>
+						404
+					</h2>
+					<!-- /wp:heading -->
+
+					<!-- wp:paragraph {"className":"glow","style":{"typography":{"fontStyle":"normal","fontWeight":"100"},"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white","fontSize":"x-large"} -->
+					<p
+						class="glow has-white-color has-text-color has-link-color has-x-large-font-size"
+						style="font-style: normal; font-weight: 100"
+					>
+						Seite nicht gefunden
+					</p>
+					<!-- /wp:paragraph -->
+				</div>
+				<!-- /wp:group -->
+			</div>
+			<!-- /wp:group -->
+		</div>
+	</div>
+	<!-- /wp:cover -->
+</section>
 <!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer","theme":"TWD-Portfolio","tagName":"footer"} /-->
