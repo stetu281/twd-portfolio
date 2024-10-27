@@ -63,6 +63,11 @@
 					"slug": "red",
 					"color": "#ff5d74",
 					"name": "Pink-Rot"
+				},
+				{
+					"slug": "green",
+					"color": "#b8ff96",
+					"name": "Grün"
 				}
 			],
 			"gradients": [
