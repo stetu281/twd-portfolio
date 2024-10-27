@@ -20,7 +20,8 @@ function starter_enqueue_block_styles()
 
   //add block name for each style
   $blocks = array(
-    'core/button'
+    'core/button',
+    'core/gallery'
   );
 
   foreach ($blocks as $block) {

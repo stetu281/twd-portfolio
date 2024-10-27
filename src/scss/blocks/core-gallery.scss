@@ -1,0 +1,21 @@
+body {
+	.wp-block-gallery {
+		flex-wrap: nowrap;
+		flex-direction: column;
+
+		figure {
+			width: 100% !important;
+		}
+
+		@media screen and (min-width: 768px) {
+			flex-wrap: wrap;
+			flex-direction: row;
+
+			figure {
+				width: calc(
+					50% - var(--wp--style--unstable-gallery-gap, 16px) / 2
+				) !important;
+			}
+		}
+	}
+}
