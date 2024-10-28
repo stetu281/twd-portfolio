@@ -69,4 +69,10 @@
 			}
 		}
 	}
+
+	@include breakpoint($w_xxl) {
+		top: 2rem;
+		z-index: 100;
+		width: fit-content;
+	}
 }
