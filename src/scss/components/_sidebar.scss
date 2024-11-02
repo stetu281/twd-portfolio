@@ -6,7 +6,12 @@
 
 	@include breakpoint($w_md) {
 		position: sticky;
-		top: 10rem;
+		height: 90lvh;
+		top: 15lvh;
+
+		p {
+			font-size: 0.875rem !important;
+		}
 
 		&__cover {
 			h2 {
