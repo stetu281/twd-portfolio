@@ -1,4 +1,12 @@
 export default function stickyNav() {
+	//Open Navigation Button
+	document
+		.querySelector('.sticky-nav__button')
+		.addEventListener('click', (e) => {
+			e.target.parentElement.classList.toggle('sticky-nav--open');
+		});
+
+	//Observer Sections
 	const sections = document.querySelectorAll('.ioSection');
 	const navLinks = document.querySelectorAll(
 		'.ioSection__navigation ul li a'
