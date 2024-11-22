@@ -191,8 +191,27 @@ function starter_enqueue_404_styles() {
     $asset = include get_theme_file_path( 'assets/css/404.asset.php');
 
     wp_enqueue_style(
-      'single-style',
+      '404-style',
       get_theme_file_uri( 'assets/css/404.css' ),
+      $asset['dependencies'],
+      $asset['version']
+    );
+  }
+};
+
+/**
+ * Enqueue services Stylesheet
+ */
+add_action('wp_enqueue_scripts', 'starter_enqueue_services_styles');
+
+function starter_enqueue_services_styles() {
+
+  if(is_page(1211)) {
+    $asset = include get_theme_file_path( 'assets/css/services.asset.php');
+
+    wp_enqueue_style(
+      'services-style',
+      get_theme_file_uri( 'assets/css/services.css' ),
       $asset['dependencies'],
       $asset['version']
     );

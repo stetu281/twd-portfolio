@@ -81,6 +81,11 @@ module.exports = {
 				'src/scss/pages/',
 				'404.scss'
 			),
+			'css/services': path.resolve(
+				process.cwd(),
+				'src/scss/pages/',
+				'services.scss'
+			),
 		},
 	},
 	plugins: [
