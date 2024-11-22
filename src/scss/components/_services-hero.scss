@@ -1,0 +1,50 @@
+@use "../basics/variables" as *;
+@use "../basics/mixins" as *;
+
+@include slideAnimation("services-title-animation", 2rem, 0, 0, 1, 5px, 0);
+
+.servicesHero {
+	h1,
+	h2,
+	p {
+		animation: services-title-animation 1s ease 0.3s forwards;
+	}
+
+	h2 {
+		animation-delay: 0.4s;
+	}
+
+	p {
+		animation-delay: 0.5s;
+	}
+
+	@include breakpoint($w_md) {
+		padding-right: 0 !important;
+
+		h1 {
+			font-size: var(--wp--preset--font-size--slider) !important;
+		}
+
+		h2 {
+			margin-top: 0 !important;
+			font-size: var(--wp--preset--font-size--x-large) !important;
+
+			strong {
+				font-size: var(--wp--preset--font-size--xx-large) !important;
+			}
+		}
+
+		p {
+			max-width: 45rem;
+		}
+
+		& .wp-block-cover {
+			margin-right: 0 !important;
+
+			&__inner-container {
+				padding-left: 2.5rem;
+				margin-top: -2lvh;
+			}
+		}
+	}
+}

@@ -1,0 +1,63 @@
+@use "../basics/variables" as *;
+@use "../basics/mixins" as *;
+
+.basics {
+	backdrop-filter: blur(3px);
+
+	&__card {
+		max-width: 400px;
+
+		figure {
+			img {
+				margin: -2rem 0 0 2rem;
+			}
+		}
+	}
+
+	@include breakpoint($w_sm) {
+		h1 {
+			font-size: var(--wp--preset--font-size--xx-large) !important;
+		}
+
+		&__card {
+			/* 			&:nth-of-type(1) {
+				transform: translate(0, 5rem);
+			}
+
+			&:nth-of-type(3) {
+				transform: translate(0, 8rem);
+			} */
+
+			@supports (animation-timeline: view()) {
+				animation: scrollSlide 1ms linear forwards;
+				animation-timeline: view();
+				animation-range: entry -25% contain 60%;
+
+				&:nth-of-type(1) {
+					--transformStart: 30rem;
+					--transformEnd: 7rem;
+				}
+
+				&:nth-of-type(2) {
+					--transformStart: 50rem;
+					--transformEnd: 0;
+				}
+
+				&:nth-of-type(3) {
+					--transformStart: 80rem;
+					--transformEnd: 12rem;
+				}
+
+				@keyframes scrollSlide {
+					from {
+						transform: translateY(var(--transformStart));
+					}
+
+					to {
+						transform: translateY(var(--transformEnd));
+					}
+				}
+			}
+		}
+	}
+}
