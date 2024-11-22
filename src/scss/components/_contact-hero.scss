@@ -5,6 +5,8 @@
 @include slideAnimation("contact-img-animation", -5rem, 0, 0, 1, 20px, 0);
 
 .contactHero {
+	overflow: hidden;
+
 	&__text {
 		gap: 0;
 
@@ -14,7 +16,7 @@
 			background-size: cover;
 			background-clip: text;
 			-webkit-text-fill-color: transparent;
-			font-size: 22.5vw;
+			font-size: 22vw;
 			line-height: 110%;
 			font-weight: 900;
 			opacity: 0;
