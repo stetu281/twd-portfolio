@@ -149,7 +149,7 @@
 		}
 	}
 
-	@include breakpoint($w_md) {
+	@include breakpoint($w_lg) {
 		&__grid {
 			grid-template-columns: 1fr 1.6fr;
 		}

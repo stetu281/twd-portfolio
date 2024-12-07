@@ -49,6 +49,20 @@
 				}
 			}
 		}
+
+		&__steps {
+			padding: 2rem;
+			gap: var(--wp--preset--spacing--70) !important;
+			border-radius: 1.25rem;
+			background-color: var(--wp--preset--color--black-light);
+
+			h2,
+			p {
+				font-size: var(
+					--wp--preset--font-size--paragraph-large
+				) !important;
+			}
+		}
 	}
 
 	@include breakpoint($w_md) {

@@ -34,9 +34,9 @@
 				background-image: linear-gradient(
 					-45deg,
 					transparent 40%,
-					#f3f3f370 46%,
-					#d2ffdcb3 50%,
-					#c9ccfd3d 100%
+					rgb(181, 181, 181) 46%,
+					rgb(235, 235, 235) 50%,
+					rgba(204, 204, 204, 0.24) 100%
 				);
 				z-index: 0;
 				text-align: left;
@@ -79,6 +79,10 @@
 	}
 
 	@include breakpoint($w_md) {
+		h1 {
+			font-size: var(--wp--preset--font-size--slider);
+		}
+
 		&__work {
 			&--title {
 				text-align: right;

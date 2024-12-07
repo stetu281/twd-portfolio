@@ -26,3 +26,18 @@
 		}
 	}
 }
+
+@mixin slideUp {
+	@keyframes slideUp {
+		from {
+			transform: translateY(2rem);
+			opacity: 0;
+			filter: blur(5px);
+		}
+		to {
+			transform: translateY(0);
+			opacity: 1;
+			filter: blur(0);
+		}
+	}
+}

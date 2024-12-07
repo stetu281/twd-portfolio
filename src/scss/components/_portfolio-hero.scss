@@ -40,10 +40,21 @@
 	}
 
 	&__title {
-		grid-column: 1 / 5;
-		grid-row: 1 / 3;
-		transform: translateX(20%);
-		z-index: 2;
+		opacity: 0;
+		animation: slideUp 1.2s ease 0.2s forwards;
+
+		@keyframes slideUp {
+			from {
+				transform: translateY(2rem);
+				opacity: 0;
+				filter: blur(5px);
+			}
+			to {
+				transform: translateY(0);
+				opacity: 1;
+				filter: blur(0);
+			}
+		}
 	}
 
 	&__img {
@@ -118,12 +129,6 @@
 			gap: 0.75rem;
 		}
 
-		&__title {
-			grid-column: 1 / 4;
-			grid-row: 1 / 2;
-			transform: unset;
-		}
-
 		&__img {
 			&--tl {
 				grid-column: 1 / 2;
@@ -168,7 +173,7 @@
 
 	@include breakpoint($w_md) {
 		&__title {
-			font-size: var(--wp--preset--font-size--hero-title) !important;
+			font-size: 8vw !important;
 		}
 
 		&__img {

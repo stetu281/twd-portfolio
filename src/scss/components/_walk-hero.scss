@@ -1,25 +1,65 @@
 @use "../basics/variables" as *;
 @use "../basics/mixins" as *;
 
-.walk {
-	&__text {
-		p {
-			max-width: 40rem;
+@include slideUp;
+
+.walkHero {
+	h1,
+	h2 {
+		opacity: 0;
+		animation: slideUp 1.2s ease 0s forwards;
+		word-break: break-word;
+	}
+
+	h2 {
+		max-width: 35rem !important;
+		animation-delay: 0.2s;
+	}
+
+	&__video {
+		width: 100%;
+		opacity: 0;
+		animation: fadeIn 1.2s ease 0.2s forwards;
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+				filter: blur(5px);
+			}
+			to {
+				opacity: 1;
+				filter: blur(0);
+			}
 		}
 	}
 
-	@include breakpoint($w_lg) {
-		&__text {
-			padding: 1rem;
+	@include breakpoint($w_sm) {
+		margin-top: var(--wp--preset--spacing--100) !important;
+	}
 
-			h1 {
-				font-size: var(--wp--preset--font-size--slider) !important;
-			}
+	@include breakpoint($w_md) {
+		&__content {
+			align-items: unset !important;
+			gap: 1.5rem;
+		}
 
-			p {
-				width: 50%;
-				max-width: 50rem;
-			}
+		&__video {
+			margin-top: unset !important;
+			animation-delay: 0.4s;
+		}
+
+		h1 {
+			order: 3;
+			text-align: left;
+			font-size: 8vw;
+		}
+
+		h2 {
+			max-width: 60rem !important;
+			margin-right: var(--wp--preset--spacing--60);
+			text-align: right;
+			align-self: flex-end;
+			font-size: var(--wp--preset--font-size--subtitle) !important;
 		}
 	}
 }

@@ -50,7 +50,8 @@ a {
 	}
 }
 
-div.reveal {
+div.reveal,
+h1.reveal {
 	@extend %textIn;
 
 	&--active {
