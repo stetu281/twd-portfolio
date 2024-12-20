@@ -211,6 +211,15 @@
 					"slug": "hero-title"
 				},
 				{
+					"name": "Display",
+					"fluid": {
+						"min": "1.75rem",
+						"max": "8rem"
+					},
+					"size": "8rem",
+					"slug": "display"
+				},
+				{
 					"name": "Subtitle",
 					"fluid": {
 						"min": "1.125rem",

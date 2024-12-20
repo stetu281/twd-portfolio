@@ -48,6 +48,10 @@
 		}
 	}
 
+	h1 {
+		max-width: 1600px;
+	}
+
 	&__slider {
 		&--container {
 			width: 350%;
@@ -125,6 +129,12 @@
 					}
 				}
 			}
+		}
+	}
+
+	@media screen and (min-width: 1800px) and (min-height: 1000px) {
+		h1 {
+			font-size: var(--wp--preset--font-size--hero-title) !important;
 		}
 	}
 

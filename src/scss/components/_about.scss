@@ -2,11 +2,15 @@
 @use "../basics/mixins" as *;
 
 .about {
-	@include breakpoint($w_sm) {
-		h1 {
-			font-size: var(--wp--preset--font-size--slider) !important;
-		}
+	h1 {
+		margin-top: -1rem;
+	}
 
+	h2 {
+		max-width: 35rem;
+	}
+
+	@include breakpoint($w_sm) {
 		&__imgGrid {
 			grid-template-columns: repeat(2, 1fr);
 			grid-template-rows: 1.5fr 1fr;

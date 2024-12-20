@@ -51,7 +51,8 @@
 		h1 {
 			order: 3;
 			text-align: left;
-			font-size: 8vw;
+			font-size: 6vw !important;
+			align-self: flex-start;
 		}
 
 		h2 {
