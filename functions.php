@@ -162,7 +162,7 @@ function starter_enqueue_walking_styles() {
 };
 
 /**
- * Enqueue Single Article Stylesheet
+ * Enqueue Single Article Stylesheet and js
  */
 add_action('wp_enqueue_scripts', 'starter_enqueue_single_styles');
 
@@ -170,6 +170,7 @@ function starter_enqueue_single_styles() {
 
   if(is_single()) {
     $asset = include get_theme_file_path( 'assets/css/walking.asset.php');
+    $js_asset = include get_theme_file_path() . '/assets/js/page-single.asset.php';
 
     wp_enqueue_style(
       'single-style',
@@ -177,8 +178,37 @@ function starter_enqueue_single_styles() {
       $asset['dependencies'],
       $asset['version']
     );
+
+    wp_enqueue_script(
+      'single_page_scripts',
+      get_theme_file_uri() . '/assets/js/page-single.js',
+      $js_asset['dependencies'],
+      $js_asset['version'], true) ;
   }
 };
+
+/**
+ * Add Js Snippet to Single Article Page to prevent flash
+ */
+add_action('wp_head', 'initialize_theme_js');
+
+function initialize_theme_js() {
+  if(is_single()) {
+    ?>
+    <script>
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        if(savedTheme) {
+          document.documentElement.setAttribute('data-theme', savedTheme);
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+    <?php
+  }
+};
+
 
 /**
  * Enqueue 404 Stylesheet

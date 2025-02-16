@@ -41,6 +41,11 @@ module.exports = {
 				'src/js',
 				'page-walking.js'
 			),
+			'js/page-single': path.resolve(
+				process.cwd(),
+				'src/js',
+				'page-single.js'
+			),
 			'css/screen': path.resolve(
 				process.cwd(),
 				'src/scss',
