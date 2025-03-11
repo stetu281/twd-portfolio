@@ -18,6 +18,10 @@
 
 		p {
 			color: #2c2c2c;
+
+			em mark {
+				color: var(--wp--preset--color--black) !important;
+			}
 		}
 
 		a {
@@ -61,6 +65,14 @@
 
 			p {
 				color: var(--wp--preset--color--white);
+
+				a {
+					color: var(--wp--preset--color--green) !important;
+				}
+			}
+
+			a {
+				color: unset !important;
 			}
 		}
 
