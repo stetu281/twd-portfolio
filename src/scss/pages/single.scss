@@ -2,6 +2,8 @@
 @use "../components/sidebar" as *;
 @use "../components/single-content" as *;
 @use "../components/colormode" as *;
+@use "../basics/variables" as *;
+@use "../basics/mixins" as *;
 
 [data-theme="light"] {
 	.post-template-single-with-sidebar {
@@ -16,6 +18,40 @@
 
 		p {
 			color: #2c2c2c;
+		}
+
+		a {
+			color: #7b1ec0 !important;
+			transition: color 0.2s ease;
+
+			&:hover {
+				color: var(--wp--preset--color--blue) !important;
+				text-decoration: underline;
+			}
+		}
+
+		ul li {
+			color: var(--wp--preset--color--black) !important;
+
+			mark {
+				color: var(--wp--preset--color--black) !important;
+			}
+
+			strong a mark {
+				color: #7b1ec0 !important;
+				transition: color 0.2s ease;
+
+				&:hover {
+					color: var(--wp--preset--color--blue) !important ;
+					text-decoration: underline;
+				}
+			}
+
+			@include breakpoint($w_md) {
+				font-size: var(
+					--wp--preset--font-size--paragraph-large
+				) !important;
+			}
 		}
 
 		.sidebar {
@@ -58,6 +94,16 @@
 .post-template-single-with-sidebar {
 	transition: all 0.75s ease;
 	background-color: var(--wp--preset--color--black);
+
+	ul li {
+		strong a mark {
+			transition: color 0.2s ease;
+
+			&:hover {
+				color: var(--wp--preset--color--blue) !important;
+			}
+		}
+	}
 
 	header .header {
 		h1 {
